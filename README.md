@@ -2,7 +2,7 @@
 
 Seth Douglas and Nidhal Mghirbi.
 
-Version 1.0.0, October 2026. A preprint; it has not been peer reviewed.
+Version 1.0.0, October 2026. DOI: [10.5281/zenodo.23771444](https://doi.org/10.5281/zenodo.23771444). Concept DOI (all versions): [10.5281/zenodo.23771443](https://doi.org/10.5281/zenodo.23771443). A preprint; it has not been peer reviewed.
 
 We construct translation-invariant nearest-neighbour lattice families whose fixed-coupling thermodynamic gap stays positive while the entanglement entropy of a growing cell-anchored region has any prescribed nonnegative limit-computable logarithmic coefficient. Ordered lower and upper coefficients have the exact second-level one-sided arithmetic classes within an effective cell model. Separately, a referee history cell converts low energy into a nonlocal-game strategy with identical pure-state Schmidt coefficients and a mixed-state distillable-entanglement certificate. The extraction cost is controlled by the clock grid's corner-to-uniform resistance: linear, logarithmic, and bounded for one, two, and three clocks. We give a conditional material theorem with explicit layout and selection hypotheses, a worst-case whole-cell perturbation law, and necessary temperature, preparation-time, and work bounds. Disjoint quasi-local spin-lattice measurements yield only the closure of finite-dimensional correlations. All gap limits use factorial tori before the coupling limit; the entanglement cut grows inside a selected cell. The game-driven material construction remains conditional.
 
