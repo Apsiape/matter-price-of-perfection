@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Matter that pays the price of perfection},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Dtwo}{\Delta^0_2}
+\newcommand{\LS}{\text{left-}\Sigma^0_2}
+\newcommand{\LP}{\text{left-}\Pi^0_2}
+\newcommand{\ED}{E_D^{A\to B}}
+\newcommand{\price}{d_G^{\to}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ket}[1]{\lvert#1\rangle}
+\newcommand{\bra}[1]{\langle#1\rvert}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\SR}{\operatorname{SR}}
+\newcommand{\bitlength}{\operatorname{bitlength}}
+\title{Matter that pays the price of perfection\thanks{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done, and what the machine checks cover, is described at the end of the paper.}}
+\author{Seth Douglas \and Nidhal Mghirbi}
+\date{Version 1.0.0, October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct translation-invariant nearest-neighbour lattice families whose fixed-coupling thermodynamic gap stays positive while the entanglement entropy of a growing cell-anchored region has any prescribed nonnegative limit-computable logarithmic coefficient. Ordered lower and upper coefficients have the exact second-level one-sided arithmetic classes within an effective cell model. Separately, a referee history cell converts low energy into a nonlocal-game strategy with identical pure-state Schmidt coefficients and a mixed-state distillable-entanglement certificate. The extraction cost is controlled by the clock grid's corner-to-uniform resistance: linear, logarithmic, and bounded for one, two, and three clocks. We give a conditional material theorem with explicit layout and selection hypotheses, a worst-case whole-cell perturbation law, and necessary temperature, preparation-time, and work bounds. Disjoint quasi-local spin-lattice measurements yield only the closure of finite-dimensional correlations. All gap limits use factorial tori before the coupling limit; the entanglement cut grows inside a selected cell. The game-driven material construction remains conditional.
+\end{abstract}
+\input{introduction}
+\input{ruler}
+\input{entanglement}
+\input{referee}
+\input{circuits}
+\input{conditional}
+\input{correlations}
+\input{noise}
+\input{thermal}
+\input{scope}
+\begingroup
+\raggedright
+\bibliographystyle{plain}
+\bibliography{references}
+\endgroup
+\end{document}

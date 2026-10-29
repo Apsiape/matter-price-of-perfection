@@ -1,0 +1,381 @@
+\begin{thebibliography}{10}
+
+\bibitem{agik}
+Dorit Aharonov, Daniel Gottesman, Sandy Irani, and Julia Kempe.
+\newblock The power of quantum systems on a line, 2009.
+\newblock Communications in Mathematical Physics 287, 41--65;
+  \href{https://arxiv.org/abs/0705.4077}{arXiv:0705.4077}.
+
+\bibitem{adkllr}
+Dorit Aharonov, Wim van Dam, Julia Kempe, Zeph Landau, Seth Lloyd, and Oded
+  Regev.
+\newblock Adiabatic quantum computation is equivalent to standard quantum
+  computation, 2007.
+\newblock SIAM Journal on Computing 37, 166--194;
+  \href{https://arxiv.org/abs/quant-ph/0405098}{arXiv:quant-ph/0405098}.
+
+\bibitem{aubry}
+Serge Aubry.
+\newblock The twist map, the extended {Frenkel--Kontorova} model and the
+  devil's staircase, 1983.
+\newblock Physica D 7, 240--258.
+  \href{https://doi.org/10.1016/0167-2789(83)90129-X}{doi:10.1016/0167-2789(83)90129-X}.
+
+\bibitem{audenaert}
+Koenraad M.~R. Audenaert.
+\newblock A sharp continuity estimate for the von {Neumann} entropy, 2007.
+\newblock Journal of Physics A 40, 8127--8136;
+  \href{https://arxiv.org/abs/quant-ph/0610146}{arXiv:quant-ph/0610146}.
+
+\bibitem{bak}
+Per Bak and Rob Bruinsma.
+\newblock One-dimensional {Ising} model and the complete devil's staircase,
+  1982.
+\newblock Physical Review Letters 49, 249--251.
+  \href{https://doi.org/10.1103/PhysRevLett.49.249}{doi:10.1103/PhysRevLett.49.249}.
+
+\bibitem{droplet}
+Paul Balister, B{\'e}la Bollob{\'a}s, Robert Morris, and Paul Smith.
+\newblock The critical length for growing a droplet, 2025.
+\newblock Memoirs of the AMS 310, no. 1571;
+  \href{https://arxiv.org/abs/2203.13808v3}{arXiv:2203.13808v3}.
+
+\bibitem{bootstrap}
+Paul Balister, B{\'e}la Bollob{\'a}s, Robert Morris, and Paul Smith.
+\newblock Universality for monotone cellular automata, 2026.
+\newblock Journal of the European Mathematical Society 28;
+  \href{https://arxiv.org/abs/2203.13806v3}{arXiv:2203.13806v3}.
+
+\bibitem{bCrosson}
+Johannes Bausch and Elizabeth Crosson.
+\newblock Analysis and limitations of modified circuit-to-hamiltonian
+  constructions, 2018.
+\newblock Quantum 2, 94; arXiv:1609.08571v3.
+  \href{https://doi.org/10.22331/q-2018-09-19-94}{doi:10.22331/q-2018-09-19-94}.
+
+\bibitem{bclp}
+Johannes Bausch, Toby~S. Cubitt, Angelo Lucia, and David P{\'e}rez-Garc{\'i}a.
+\newblock Undecidability of the spectral gap in one dimension, 2020.
+\newblock Physical Review X 10, 031038.
+  \href{https://doi.org/10.1103/PhysRevX.10.031038}{doi:10.1103/PhysRevX.10.031038}.
+
+\bibitem{size}
+Johannes Bausch, Toby~S. Cubitt, Angelo Lucia, David P{\'e}rez-Garc{\'i}a, and
+  Michael~M. Wolf.
+\newblock Size-driven quantum phase transitions, 2018.
+\newblock PNAS 115, 19--23.
+  \href{https://doi.org/10.1073/pnas.1705042114}{doi:10.1073/pnas.1705042114}.
+
+\bibitem{bcw}
+Johannes Bausch, Toby~S. Cubitt, and James~D. Watson.
+\newblock Uncomputability of phase diagrams, 2021.
+\newblock Nature Communications 12, 452.
+  \href{https://doi.org/10.1038/s41467-020-20504-6}{doi:10.1038/s41467-020-20504-6}.
+
+\bibitem{belovs}
+Aleksandrs Belovs and Ben~W. Reichardt.
+\newblock Span programs and quantum algorithms for st-connectivity and claw
+  detection, 2012.
+\newblock \href{https://arxiv.org/abs/1203.2603}{arXiv:1203.2603}.
+
+\bibitem{bennett}
+Charles~H. Bennett.
+\newblock Time/space trade-offs for reversible computation, 1989.
+\newblock SIAM Journal on Computing 18, 766--776.
+  \href{https://doi.org/10.1137/0218053}{doi:10.1137/0218053}.
+
+\bibitem{bbps}
+Charles~H. Bennett, Herbert~J. Bernstein, Sandu Popescu, and Benjamin
+  Schumacher.
+\newblock Concentrating partial entanglement by local operations, 1996.
+\newblock Physical Review A 53, 2046--2052;
+  \href{https://arxiv.org/abs/quant-ph/9511030}{arXiv:quant-ph/9511030}.
+
+\bibitem{bravyi}
+Sergey Bravyi.
+\newblock Upper bounds on entangling rates of bipartite hamiltonians, 2007.
+\newblock Physical Review A 76, 052319;
+  \href{https://arxiv.org/abs/0704.0964}{arXiv:0704.0964}.
+
+\bibitem{breuckmann}
+Nikolas~P. Breuckmann and Barbara~M. Terhal.
+\newblock Space-time circuit-to-hamiltonian construction and its applications,
+  2014.
+\newblock Journal of Physics A 47, 195304;
+  \href{https://arxiv.org/abs/1311.6101}{arXiv:1311.6101}.
+
+\bibitem{caha}
+Libor Caha, Zeph Landau, and Daniel Nagaj.
+\newblock Clocks in {Feynman}'s computer and {Kitaev}'s local hamiltonian:
+  bias, gaps, idling, and pulse tuning, 2018.
+\newblock Physical Review A 97, 062306;
+  \href{https://arxiv.org/abs/1712.07395}{arXiv:1712.07395}.
+
+\bibitem{instability}
+Laura Castilla-Castellano and Angelo Lucia.
+\newblock Instability of the undecidable behavior of the spectral gap in 1d,
+  2026.
+\newblock \href{https://arxiv.org/abs/2607.08686v1}{arXiv:2607.08686v1}.
+
+\bibitem{rotation}
+Laura Castilla-Castellano and Angelo Lucia.
+\newblock Undecidability of the spectral gap in rotationally symmetric
+  hamiltonians, 2026.
+\newblock Physical Review Research 8, 013033;
+  \href{https://arxiv.org/abs/2410.13589v2}{arXiv:2410.13589v2}.
+
+\bibitem{cw}
+Matthias Christandl and Andreas Winter.
+\newblock Squashed entanglement: an additive entanglement measure, 2004.
+\newblock Journal of Mathematical Physics 45, 829--840;
+  \href{https://arxiv.org/abs/quant-ph/0308088}{arXiv:quant-ph/0308088}.
+
+\bibitem{cserti}
+J{\'o}zsef Cserti.
+\newblock Application of the lattice {Green}'s function for calculating the
+  resistance of an infinite network of resistors, 2000.
+\newblock American Journal of Physics 68, 896--906;
+  \href{https://arxiv.org/abs/cond-mat/9909120}{arXiv:cond-mat/9909120}.
+
+\bibitem{cpw}
+Toby~S. Cubitt, David P{\'e}rez-Garc{\'i}a, and Michael~M. Wolf.
+\newblock Undecidability of the spectral gap, 2022.
+\newblock Forum of Mathematics, Pi 10, e14; full proof of the 2015 Nature
+  announcement.
+  \href{https://doi.org/10.1017/fmp.2021.15}{doi:10.1017/fmp.2021.15}.
+
+\bibitem{dawson}
+Christopher~M. Dawson and Michael~A. Nielsen.
+\newblock The {Solovay--Kitaev} algorithm, 2006.
+\newblock Quantum Information and Computation 6, 81--95;
+  \href{https://arxiv.org/abs/quant-ph/0505030}{arXiv:quant-ph/0505030}.
+
+\bibitem{precision}
+Seth Douglas and Nidhal Mghirbi.
+\newblock The price of precision: usable entanglement in nonlocal games and the
+  geometry of groups, 2026.
+\newblock Version 1.1.0. Zenodo.
+  \href{https://doi.org/10.5281/zenodo.23753349}{doi:10.5281/zenodo.23753349}.
+
+\bibitem{gap}
+Seth Douglas and Nidhal Mghirbi.
+\newblock Uncomputable critical exponents, 2026.
+\newblock Version 2.0.0. Zenodo.
+  \href{https://doi.org/10.5281/zenodo.23757361}{doi:10.5281/zenodo.23757361}.
+
+\bibitem{unprice}
+Seth Douglas and Nidhal Mghirbi.
+\newblock The uncomputable price of precision, 2026.
+\newblock Version 4.0.0. Zenodo.
+  \href{https://doi.org/10.5281/zenodo.23753741}{doi:10.5281/zenodo.23753741}.
+
+\bibitem{density}
+Rodney~G. Downey, Carl~G. {Jockusch, Jr.}, and Paul~E. Schupp.
+\newblock Asymptotic density and computably enumerable sets, 2013.
+\newblock Journal of Mathematical Logic 13;
+  \href{https://arxiv.org/abs/1307.0040}{arXiv:1307.0040}.
+
+\bibitem{doyle}
+Peter~G. Doyle and J.~Laurie Snell.
+\newblock Random walks and electric networks, 1984.
+\newblock Mathematical Association of America;
+  \href{https://arxiv.org/abs/math/0001057}{arXiv:math/0001057}.
+
+\bibitem{durand}
+Bruno Durand, Andrei Romashchenko, and Alexander Shen.
+\newblock Fixed-point tile sets and their applications, 2012.
+\newblock Journal of Computer and System Sciences 78, 731--764;
+  \href{https://arxiv.org/abs/0910.2415v7}{arXiv:0910.2415v7}.
+
+\bibitem{fawzi}
+Hamza Fawzi, Omar Fawzi, and Samuel~O. Scalet.
+\newblock Certified algorithms for equilibrium states of local quantum
+  hamiltonians, 2023.
+\newblock \href{https://arxiv.org/abs/2311.18706}{arXiv:2311.18706}.
+
+\bibitem{feynman}
+Richard~P. Feynman.
+\newblock Quantum mechanical computers, 1986.
+\newblock Foundations of Physics 16, 507--531.
+  \href{https://doi.org/10.1007/BF01886518}{doi:10.1007/BF01886518}.
+
+\bibitem{fisher}
+Michael~E. Fisher and Walter Selke.
+\newblock Infinitely many commensurate phases in a simple {Ising} model, 1980.
+\newblock Physical Review Letters 44, 1502--1505.
+  \href{https://doi.org/10.1103/PhysRevLett.44.1502}{doi:10.1103/PhysRevLett.44.1502}.
+
+\bibitem{gi}
+Daniel Gottesman and Sandy Irani.
+\newblock The quantum and classical complexity of translationally invariant
+  tiling and hamiltonian problems, 2013.
+\newblock Theory of Computing 9, 31--116; arXiv:0905.2419.
+  \href{https://doi.org/10.4086/toc.2013.v009a002}{doi:10.4086/toc.2013.v009a002}.
+
+\bibitem{hochman}
+Michael Hochman and Tom Meyerovitch.
+\newblock A characterization of the entropies of multidimensional shifts of
+  finite type, 2010.
+\newblock Annals of Mathematics 171, 2011--2038.
+  \href{https://doi.org/10.4007/annals.2010.171.2011}{doi:10.4007/annals.2010.171.2011}.
+
+\bibitem{horodecki}
+Micha{\l} Horodecki and Pawe{\l} Horodecki.
+\newblock Reduction criterion of separability and limits for a class of
+  protocols of entanglement distillation, 1999.
+\newblock Physical Review A 59, 4206--4216;
+  \href{https://arxiv.org/abs/quant-ph/9708015}{arXiv:quant-ph/9708015}.
+
+\bibitem{huber}
+Marcus Huber, Mart{\'i} Perarnau-Llobet, Karen~V. Hovhannisyan, Paul
+  Skrzypczyk, C.~Kl{\"o}ckl, Nicolas Brunner, and Antonio Ac{\'i}n.
+\newblock Thermodynamic cost of creating correlations, 2015.
+\newblock New Journal of Physics 17, 065008;
+  \href{https://arxiv.org/abs/1404.2169}{arXiv:1404.2169}.
+
+\bibitem{mip}
+Zhengfeng Ji, Anand Natarajan, Thomas Vidick, John Wright, and Henry Yuen.
+\newblock {$\mathrm{MIP}^*=\mathrm{RE}$}, 2026.
+\newblock \href{https://arxiv.org/abs/2001.04383v4}{arXiv:2001.04383v4}, 16
+  October 2026; first posted 2020.
+
+\bibitem{kato}
+Tosio Kato.
+\newblock Perturbation theory for linear operators, 1995.
+\newblock Springer, reprint of second edition.
+  \href{https://doi.org/10.1007/978-3-642-66282-9}{doi:10.1007/978-3-642-66282-9}.
+
+\bibitem{ksv}
+Alexei~Yu. Kitaev, Alexander~H. Shen, and Mikhail~N. Vyalyi.
+\newblock Classical and quantum computation, 2002.
+\newblock Graduate Studies in Mathematics 47, American Mathematical Society.
+  \href{https://doi.org/10.1090/gsm/047}{doi:10.1090/gsm/047}.
+
+\bibitem{meyerovitch}
+Tom Meyerovitch.
+\newblock Growth-type invariants for {$\mathbb Z^d$} subshifts of finite type
+  and arithmetical classes of real numbers, 2011.
+\newblock Inventiones Mathematicae 184, 567--589.
+  \href{https://doi.org/10.1007/s00222-010-0296-1}{doi:10.1007/s00222-010-0296-1}.
+
+\bibitem{miekisz}
+Jacek Mi{\c e}kisz.
+\newblock Stable quasicrystalline ground states, 1993.
+\newblock
+  \href{https://arxiv.org/abs/cond-mat/9301017v2}{arXiv:cond-mat/9301017v2}.
+
+\bibitem{miekisznew}
+Jacek Mi{\c e}kisz.
+\newblock Quasicrystal problem: on rigidity of non-periodic structures from
+  statistical mechanics point of view, 2024.
+\newblock \href{https://arxiv.org/abs/2412.19594}{arXiv:2412.19594}.
+
+\bibitem{movassagh}
+Ramis Movassagh and Peter~W. Shor.
+\newblock Supercritical entanglement in local systems: counterexample to the
+  area law for quantum matter, 2016.
+\newblock PNAS 113, 13278--13282;
+  \href{https://arxiv.org/abs/1408.1657}{arXiv:1408.1657}.
+
+\bibitem{pokrovsky}
+V.~L. Pokrovsky and A.~L. Talapov.
+\newblock Ground state, spectrum, and phase diagram of two-dimensional
+  incommensurate crystals, 1979.
+\newblock Physical Review Letters 42, 65--67.
+  \href{https://doi.org/10.1103/PhysRevLett.42.65}{doi:10.1103/PhysRevLett.42.65}.
+
+\bibitem{chaitin}
+James Purcell, Zhi Li, and Toby~S. Cubitt.
+\newblock Chaitin phase transition, 2024.
+\newblock \href{https://arxiv.org/abs/2410.02600v1}{arXiv:2410.02600v1}.
+
+\bibitem{fredkin}
+Olof Salberger, Takuma Udagawa, Zhao Zhang, Hosho Katsura, Israel Klich, and
+  Vladimir Korepin.
+\newblock Deformed {Fredkin} spin chain with extensive entanglement, 2017.
+\newblock Journal of Statistical Mechanics, 063103;
+  \href{https://arxiv.org/abs/1611.04983}{arXiv:1611.04983}.
+
+\bibitem{schmidhuber}
+Christof Schmidhuber.
+\newblock Chaitin's {Omega} and an algorithmic phase transition, 2022.
+\newblock Physica A 586, 126458;
+  \href{https://arxiv.org/abs/1909.09231v3}{arXiv:1909.09231v3}.
+
+\bibitem{scholz}
+Volkher~B. Scholz and Reinhard~F. Werner.
+\newblock Tsirelson's problem, 2008.
+\newblock \href{https://arxiv.org/abs/0812.4305}{arXiv:0812.4305}.
+
+\bibitem{sv}
+William Slofstra and Thomas Vidick.
+\newblock Entanglement in non-local games and the hyperlinear profile of
+  groups, 2018.
+\newblock Annales Henri Poincar{\'e} 19, 2979--3005;
+  \href{https://arxiv.org/abs/1711.10676}{arXiv:1711.10676}.
+
+\bibitem{taati}
+Siamak Taati and Jacek Mi{\c e}kisz.
+\newblock Quasicrystalline gibbs states in 4-dimensional lattice-gas models
+  with finite-range interactions, 2025.
+\newblock \href{https://arxiv.org/abs/2512.24436v1}{arXiv:2512.24436v1}.
+
+\bibitem{tempel}
+David~G. Tempel and Alan Aspuru-Guzik.
+\newblock {Feynman}'s clock for open quantum systems, 2014.
+\newblock New Journal of Physics 16, 113066;
+  \href{https://arxiv.org/abs/1406.5631}{arXiv:1406.5631}.
+
+\bibitem{usher}
+Na{\"i}ri Usher, Matty~J. Hoban, and Dan~E. Browne.
+\newblock Non-unitary quantum computation in the ground space of local
+  hamiltonians, 2017.
+\newblock Physical Review A 96, 032321;
+  \href{https://arxiv.org/abs/1703.08118}{arXiv:1703.08118}.
+
+\bibitem{van}
+Karel {Van Acoleyen}, Micha{\"e}l Mari{\"e}n, and Frank Verstraete.
+\newblock Entanglement rates and area laws, 2013.
+\newblock Physical Review Letters 111, 170501;
+  \href{https://arxiv.org/abs/1304.5931}{arXiv:1304.5931}.
+
+\bibitem{criticalpoints}
+James~D. Watson and Johannes Bausch.
+\newblock The complexity of approximating critical points of quantum phase
+  transitions, 2021.
+\newblock \href{https://arxiv.org/abs/2105.13350}{arXiv:2105.13350}.
+
+\bibitem{rg}
+James~D. Watson, Emilio Onorati, and Toby~S. Cubitt.
+\newblock Uncomputably complex renormalisation group flows, 2022.
+\newblock Nature Communications 13, 7618.
+  \href{https://doi.org/10.1038/s41467-022-35179-4}{doi:10.1038/s41467-022-35179-4}.
+
+\bibitem{wolf}
+Michael~M. Wolf, Frank Verstraete, Matthew~B. Hastings, and J.~Ignacio Cirac.
+\newblock Area laws in quantum systems: mutual information and correlations,
+  2008.
+\newblock Physical Review Letters 100, 070502;
+  \href{https://arxiv.org/abs/0704.3906}{arXiv:0704.3906}.
+
+\bibitem{xu}
+Xiangling Xu, Matthias Sch{\"o}tz, Jie Wang, Victor Magron, Igor Klep, Omar
+  Fawzi, and Marc-Olivier Renou.
+\newblock The bulk spectral gap is certifiable from above but uncomputable from
+  below, 2026.
+\newblock \href{https://arxiv.org/abs/2606.03836v4}{arXiv:2606.03836v4}, 15
+  October 2026.
+
+\bibitem{zhang}
+Zhao Zhang, Amr Ahmadain, and Israel Klich.
+\newblock Novel quantum phase transition from bounded to extensive
+  entanglement, 2017.
+\newblock PNAS 114, 5142--5146;
+  \href{https://arxiv.org/abs/1606.07795}{arXiv:1606.07795}.
+
+\bibitem{zheng}
+Xizhong Zheng and Klaus Weihrauch.
+\newblock The arithmetical hierarchy of real numbers, 2001.
+\newblock Mathematical Logic Quarterly 47, 51--65.
+
+\end{thebibliography}

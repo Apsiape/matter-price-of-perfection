@@ -1,0 +1,178 @@
+\section{A gapped family with programmed entanglement}\label{sec:pairs}
+Fix $b_0\geq1$, put $d=2^{b_0}$, and take a fast word $A$ from
+\cite[Lemma 8.1]{gap}. The imported bottom reader selects precisely
+the first $\ell(h)=\bitlength(h-1)$ interior columns at the final
+tableau row. For all sufficiently large $h$, the output at its column
+$j$ is $A(j)$. Indeed the first $\ell$ bits are written by time
+$2^{\ell-1}-2<h-1$ in the imported timing convention. A computable
+small-$g$ cutoff makes both rows of every pair interior.
+
+Each site carries $\C^d$. Add a classical partner bit, functionally
+determined by whether the lower neighbour is an active bottom-prefix
+site. A two-site equality test determines it uniquely and costs two
+if violated. On each active vertical pair put
+\begin{equation}\label{eq:pair}
+ H_{\rm pair}=I-\ket{\Phi_d}\bra{\Phi_d},\qquad
+ \ket{\Phi_d}=d^{-1/2}\sum_{j=0}^{d-1}\ket{j,j}.
+\end{equation}
+Every other quantum register, including wall registers, receives
+$I-\ket0\bra0$. In a correct tableau these supports are disjoint.
+All matrix entries of the Bell projection are zero or $1/d$;
+the whole construction therefore has rational coefficient matrices,
+fixed local dimension, and nearest-neighbour interactions. A finite
+alphabet enlargement suffices for all added classical flags.
+For this construction give every forbidden wall pair and every
+tableau/flag violation cost two. This leaves the perfect densities
+\eqref{eq:ruler} unchanged. The imported wall estimate strengthens by
+exactly the number of wall violations, so a defective wall block has
+margin at least $13/8$. The larger penalties will also make the
+thermodynamic gap an actual eventually constant limit.
+
+\begin{proof}[Proof of Theorem~\ref{thm:programmed}]
+In a perfect correct block the quantum Hamiltonian has a unique
+ground state, a tensor product of Bell pairs and frozen sites.
+Its ground energy is zero and its gap is one. In every other classical
+block all additional quantum and tableau terms remain nonnegative.
+Thus no such block can undercut the imported classical lower bounds.
+For $g\leq0$ the wall-free vacua freeze every register and the margin
+is at least $1/16$. At fixed small $g>0$, defective wall blocks have
+margin at least $13/8$, and incorrect tableau/flag blocks cost at
+least two. Choose factorial volume large enough that all wrong clean
+stripe pitches and the vacua have excess greater than one. This is
+possible by the imported positive separation $\delta(g)$. Inside
+every minimizing block the quantum spectrum is integral and has a
+unit excitation. Thus $\Delta(L,g)=1$ for all sufficiently large
+factorial volumes. This proves existence of the thermodynamic limit
+and the stated lower bound, also at ties by excluding both minimizing
+pitches when computing the separation.
+
+Off ties, all cells have side $h=p_*(g)-1$. A single-block vector
+is a product because the cell kernels are one-dimensional.
+Exactly $m(h)=|A\cap[0,\ell(h))|$ Bell pairs cross the designated
+bottom-prefix cut. Its reduced density matrix has $d^{m(h)}$ equal
+nonzero eigenvalues, each $d^{-m(h)}$. Hence every R\'enyi entropy
+in bits equals $b_0m(h)=k(h)$, and its rank is $2^{k(h)}$.
+Writing $\rho_j(A)=|A\cap[0,j)|/j$, we obtain
+\begin{equation}\label{eq:density}
+ \frac{k(h_*(g))}{\log_2(1/g)}
+       =b_0\rho_{\ell(h_*(g))}(A)+o(1).
+\end{equation}
+Every sufficiently large pitch, and hence every sufficiently large
+prefix length, occurs. Lemma~\ref{lem:unit} gives the two density
+endpoints. Choose an integer $b_0\geq\max(1,b)$ and the imported fast
+word with endpoints $a/b_0,b/b_0$. This proves attainment. Equal
+endpoints are precisely the nonnegative $\Dtwo$ targets by the imported
+density theorem. Zero is included, for example by an eventually empty
+word. Local dimension and the finite program may depend on the target.
+\end{proof}
+
+The union of all designated bottom prefixes has entropy $k(h)$ per
+cell, or $k(h)/p^2$ per lattice site in bits. Whole-cell unions have
+zero entropy in these states. A label-free variant uses the maximum
+entropy of a horizontal segment of length $s(g)$ satisfying
+$\ell(h)\leq s(g)\leq p/2$. Once $s(g)+\ell(h)<p$, such a segment
+can meet at most one active prefix, and a segment covering that prefix
+attains exactly $k(h)$. Thus the maximum equals the cell entropy;
+a factor-of-two comparison would not suffice to identify this
+logarithmic coefficient.
+
+At a fixed finite commensurate volume, approaching a classical pitch
+crossing from one side produces an arbitrarily small positive competing
+block splitting. This explains why the theorem uses a fixed-$g$
+thermodynamic distinct-level gap. It supplies no identification with
+every infinite-volume GNS gap and no conventional continuous critical
+point. In the quantum pair layer, connected correlations vanish unless
+the supports touch a common pair; a diverging structural pitch is
+compatible with this observation.
+
+\begin{corollary}[Exact arithmetic classes in an effective cell class]\label{cor:classes}
+For uniquely grounded selected cells with uniformly effective algebraic
+finite matrices and a computably specified cell-anchored region, finite
+lower, upper, and existing entropy or log-Schmidt-rank coefficients
+belong to $\LS,\LP,\Dtwo$, respectively. Together with
+Theorem~\ref{thm:programmed}, these classes are exact in this class.
+\end{corollary}
+\begin{proof}
+Exact real algebra computes the simple ground eigenvector and its
+reduced algebraic matrix. Its exact rank is decidable. Its eigenvalues
+are computable and $-x\log_2x$, extended continuously by zero, computes
+the entropy. The normalized data therefore have uniform rational
+approximants. Apply Proposition~\ref{prop:transfer} and
+Lemma~\ref{lem:unit}; finite endpoints give the eventual boundedness
+needed in the ratio comparison. No convergence modulus is asserted.
+\end{proof}
+
+\subsection{Cell perturbations and content energy}
+\begin{proposition}[Perturbed pair cells]\label{prop:pairfields}
+Add Hermitian fields $v,v'$ of norm at most $\eta$ at the two endpoints
+of each pair. For $\eta<1/4$ every pair has a unique ground state and
+gap at least $1-4\eta$. The cell still factors into pair and single-site
+blocks. Arbitrary pair fields preserve full Schmidt rank whenever
+\begin{equation}\label{eq:rankradius}
+ \eta<\frac1{4+2\sqrt d}.
+\end{equation}
+Mirror fields $v'=v^{\mathsf T}$ preserve full rank throughout
+$\eta<1/4$. If the same specified pair fields are repeated, writing
+their pair entropy as $s(v,v')$ gives exactly
+$S(R_c)=m(h)s(v,v')$; for site-dependent fields it is the sum of the
+actual pair entropies.
+\end{proposition}
+\begin{proof}
+The total pair perturbation has norm at most $2\eta$. Weyl's
+inequalities separate the former zero eigenvalue from the rest by
+$1-4\eta$. Frozen single-site blocks have gap at least $1-2\eta$.
+Disjointness gives the cell factorization.
+
+Write a pair ground vector as $a\Phi_d+b$, with $b\perp\Phi_d$,
+and write its energy as $E\leq2\eta$. With
+$Q_0=I-\ket{\Phi_d}\bra{\Phi_d}$, its eigenvalue equation gives
+\[
+ [(1-E)I+Q_0VQ_0]b=-aQ_0V\Phi_d,\qquad
+ \norm b\leq\frac{2\eta}{1-4\eta}|a|.
+\]
+The coefficient matrix is $aI/\sqrt d+B$, with
+$\norm B_{\rm op}\leq\norm b$. It is invertible under
+\eqref{eq:rankradius}. In particular $a\ne0$, since the displayed
+inequality otherwise forces the vector to vanish.
+
+For mirror fields, vectorization makes the local field action
+$X\mapsto vX+Xv$. In an eigenbasis of $v$, all off-diagonal entries
+have energy at least $1-2\eta>E$. On the diagonal subspace the
+rank-one Bell term yields
+\[
+ X\ \text{proportional to}\ [(1-E)I+2v]^{-1}.
+\]
+All denominators are at least $1-4\eta>0$, so every Schmidt
+coefficient is nonzero. Tensor products then multiply ranks and add
+the actual block entropies. Finite-dimensional continuity gives
+$s(v,v')\to\log_2d$ as the fields vanish. Computable algebraic repeated
+fields give a computable positive $s$ in the stated radii.
+\end{proof}
+
+The entropy factor is not determined by the norm bound. For $d=2$,
+equal scalar fields leave the Bell entropy one, whereas fields
+$\eta Z$ on both endpoints give the ground vector of
+\[
+ \begin{pmatrix}1/2+2\eta&-1/2\\-1/2&1/2-2\eta\end{pmatrix},
+\]
+with entropy less than one for $\eta>0$. Repeated specified fields
+rescale the cell entropy coefficient by $s/b_0$, while leaving its
+rank coefficient unchanged within the proved radius. This is a
+cell-level statement. Their energy shift can alter classical selection.
+
+\begin{proposition}[A design-dependent energetic competitor]\label{prop:competitor}
+Suppose a specified legal design admits a defect costing at most $C$
+which changes $m(h)$ independently priced content units by the
+favourable sign, without any other energy change. A field charging
+those units at magnitude $|\delta|$ makes this competitor favourable
+whenever $|\delta|m(h)>C$.
+\end{proposition}
+\begin{proof}
+Subtract the two expectation energies. The difference is at most
+$C-|\delta|m(h)$.
+\end{proof}
+An actual bounded-cost defect must be exhibited before applying this
+criterion. It is not a universal instability theorem. A logarithmically
+growing content cost does not satisfy the $h^{-3}$ hypothesis of
+Lemma~\ref{lem:shifted}; no material stability window follows from the
+pair calculation alone.

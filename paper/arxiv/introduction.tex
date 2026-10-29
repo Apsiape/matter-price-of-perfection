@@ -1,0 +1,216 @@
+\section{Main statements and conventions}\label{sec:main}
+A finite nonlocal game can demand unbounded entanglement as its loss tends
+to zero. We ask how that demand can enter a Hamiltonian. There are two
+distinct statements. An explicit lattice construction programs a
+ground-state entanglement coefficient directly. A referee cell instead
+certifies entanglement through a game's precision price. The first is
+an unconditional construction using an imported ruler; the second is an
+unconditional theorem about an ideal legal history space. Their
+composition into a particular game-driven translation-invariant material
+has additional, explicitly stated hypotheses.
+
+Entropies and distillation rates are in bits. Natural logarithms are
+written $\ln$. For a finite game $G$, $D_G(\eps)$ is the least common
+local Hilbert-space dimension of a finite strategy of loss at most
+$\eps$, allowing mixed shared states. The usable price is
+\begin{equation}\label{eq:price}
+ \price(\eps)=\inf\{\ED(\rho):\text{a finite strategy on $\rho$ has loss at most $\eps$}\}.
+\end{equation}
+An empty infimum is $+\infty$. Whenever an energy bound gives a loss
+larger than one, the resulting price statement is understood simply as
+the trivial bound at loss one. We use no precision asymptotic there.
+These conventions are those of \cite{precision,unprice}; in particular,
+the infimum is over the original mixed strategy state.
+
+The distinct-level gap of a nonscalar finite Hamiltonian is
+$\Delta(L,g)=E_1^{\rm distinct}-E_0$: the whole ground eigenspace is
+removed. Write
+\[
+ \Delta_\infty(g)=\lim_{n\to\infty}\Delta(n!,g)
+\]
+when the limit exists. The volume limit always precedes $g\downarrow0$.
+A classical block fixes every wall and tableau label. Our designated
+cell entropies are evaluated in one minimizing classical block, off the
+pitch ties. Degenerate quantum cell spaces require a further state
+choice; they never imply that all ground vectors factor over cells.
+
+\begin{theorem}[Programmed entanglement with a positive gap]\label{thm:programmed}
+Let $0\leq a\leq b<\infty$, with $a\in\LS$ and $b\in\LP$.
+There is a fixed finite-local-dimension, rational, translation-invariant
+onsite and nearest-neighbour family on $\Z^2$, affine in $g$, such that
+\[
+ \Delta(L,g)\geq1/16\quad(g\leq0),\qquad
+ \Delta_\infty(g)\geq5/8\quad(0<g<\bar g).
+\]
+The second assertion includes pitch ties. Off ties, the cell-anchored
+bottom-prefix region $R_c(g)$ has, in every single-classical-block ground
+state,
+\begin{equation}\label{eq:programmed}
+ S(R_c)=\log_2\SR(R_c:R_c^c)=k(h),\quad
+ k(h)=b_0|A\cap[0,\ell(h))|,\quad
+ \ell(h)=\bitlength(h-1),
+\end{equation}
+where $b_0$ is a positive integer and $h=p_*(g)-1$.
+The lower and upper limits of $S(R_c)/\log_2(1/g)$ are $(a,b)$.
+Consequently every nonnegative $\Dtwo$ real is an existing coefficient;
+when it equals $\kappa$, $\SR(R_c:R_c^c)=g^{-\kappa+o(1)}$.
+\end{theorem}
+
+This is a bound on the fixed-$g$ thermodynamic gap, not a positive
+finite-volume bound uniform in $g$ near every level crossing. The region
+grows within a cell and has boundary length $O(\log(1/g))$. The entropy
+does not violate an area law. The pitch diverges, but it is not asserted
+to be a connected-correlation length. The proof is in
+Section~\ref{sec:pairs}.
+
+For the second main theorem let $n=T+1$, $M=n^k$, and let $L_k$ be the
+unnormalized combinatorial Laplacian on $\{0,\ldots,T\}^k$.
+Its edge quadratic form is $\sum_{\{v,w\}}\norm{\psi_v-\psi_w}^2$.
+Assume an exact local rewinding $W=W_A\otimes W_B$ gives
+\begin{equation}\label{eq:cell}
+ W^*HW=L_k\otimes I+\ket{0^k}\bra{0^k}\otimes(I-P)
+                    +\ket{T^k}\bra{T^k}\otimes Q.
+\end{equation}
+Here $P=\ket{\pi,0}\bra{\pi,0}\otimes I_{\rm sys}$ initializes
+coherent questions and local work, and $Q$ is the final losing
+projection conjugated by the two honest local, question-controlled
+circuits. Section~\ref{sec:referee} specifies this assumption fully.
+Let $G_k=(L_k^+)_{0^k,0^k}$ and let $\mu_1$ be its first positive
+eigenvalue.
+
+\begin{theorem}[Referee extraction and resistance]\label{thm:extraction}
+For every unit legal vector $\Psi$ of energy $\lambda$, a finite
+strategy on $W^*\Psi$ has loss at most $C_k M\lambda$, with
+\begin{equation}\label{eq:constant}
+ C_k=2(3+4\sqrt{G_k})^2+\frac{2}{M\mu_1}.
+\end{equation}
+It retains exactly the Schmidt coefficients of $\Psi$. Thus
+\[
+ \SR(\Psi)\geq D_G(C_kM\lambda),\qquad
+ S_A(\Psi)\geq\price(C_kM\lambda).
+\]
+For every legal density matrix $\rho$,
+\begin{equation}\label{eq:mixed-main}
+ \ED(\rho)\geq\price(C_kM\tr(\rho H)).
+\end{equation}
+The resistance has the asymptotics
+\[
+ G_1\sim T/3,\qquad G_2=(2/\pi)\ln T+O(1),\qquad G_3<14.
+\]
+For $k\geq2$, $2/(M\mu_1)\leq1/2$; in particular three clocks admit
+the absolute extraction constant $C_3<647$. Two clocks admit the
+alternative elementary constant $5(1+\sqrt{2T})^2$.
+\end{theorem}
+
+The resistance is for injection at a corner and uniform withdrawal,
+namely $(\delta_c-M^{-1}\one)^*L_k^+(\delta_c-M^{-1}\one)$.
+It is not obtained by shorting all other vertices together. A third
+idle clock improves the extraction coefficient while increasing the
+referee-volume dilution $M$. Section~\ref{sec:referee} proves the
+theorem and the logarithmic obstruction. Sections~\ref{sec:conditional}
+and \ref{sec:thermal} give, respectively, the conditional material
+composition and necessary physical resource bounds.
+
+\subsection{Imported results}\label{sec:imports}
+We use the released version 2.0.0 of \emph{Uncomputable critical
+exponents} \cite{gap}. Its Lemmas 2.1--2.2 and Corollary 2.3 give the
+five-symbol ruler, its charging estimate, and selection/separation on
+factorial tori. Section 5 gives the functional nearest-neighbour tableau
+with the bottom-prefix reader, and Section 11 anchors it inside ruler
+cells. Lemma 8.1 supplies a computable binary word with any admissible
+density endpoints, with each bit computable in time polynomial in its
+index's bitlength. Proposition 10.1 is the limit calculus. Theorem 1.1
+of that paper is the earlier gap-exponent construction; none of its
+counter-spectrum argument is needed for our Bell-pair layer.
+
+From \emph{The uncomputable price of precision}, version 4.0.0
+\cite{unprice}, we use Theorem 1.1 for the matched dimension and
+original-state usable price, Theorem 1.2 for the halting game,
+Theorem 7.1 for its explicit finite models, Theorem 3.1 for its fixed
+polynomial-to-Boolean compiler, and Theorem 12.3 for its original-state
+usable coefficient. In particular
+\begin{equation}\label{eq:halting-import}
+\begin{gathered}
+ \alpha_K=\frac{3+\theta_K}{4},\qquad
+ \theta_K=\sum_{e\in K}4^{-(e+1)},\\
+ \log_2D_{G_K}(\eps)=\alpha_K\log_2(1/\eps)+o(\log(1/\eps)),\\
+ d_{G_K}^{\to}(\eps)=\alpha_K\log_2(1/\eps)+o(\log(1/\eps)).
+\end{gathered}
+\end{equation}
+For even $N$, the finite model has
+\begin{equation}\label{eq:finite-import}
+ K_N=\{e<N/2:h(e)<2^N\},\quad
+ \theta_N=\sum_{e\in K_N}4^{-(e+1)},\quad
+ d_N=2^{3N+k_N},\quad k_N=\theta_NN+O(\log(N+2)),
+\end{equation}
+with defining operator defects at most $3\cdot4^{-N}$ and
+$\theta_N\uparrow\theta_K$.
+The compiler and the modification in Section~\ref{sec:circuits} give
+strategies of system dimension $c_0d_N$ and loss at most
+$\eps_N=C_1 16^{-N}$, with fixed constants.
+The Boolean correspondence is imported from \emph{The price of
+precision}, version 1.1.0, Theorem 4.9 \cite{precision}. That paper's
+Theorem 11.1 already gives matching pure Schmidt-rank, pure-entropy,
+and mixed-state formation coefficients for every positive rational.
+We do not re-prove these game or ruler theorems.
+
+\subsection{Relation to earlier work}\label{sec:prior}
+Computational lattice constructions begin here with the gap
+undecidability of Cubitt, P\'erez-Garc\'ia and Wolf \cite{cpw}; marker
+segments and undecidable entanglement behavior occur in
+\cite{bclp}, size-sensitive phase changes in \cite{size}, and
+continuous-parameter checkerboard/marker constructions in
+Bausch, Cubitt and Watson \cite{bcw}. Purcell, Li and Cubitt
+\cite{chaitin} place a transition at a halting probability. Undecidable
+renormalisation destinations \cite{rg} and complexity of critical
+locations \cite{criticalpoints} concern different asymptotic questions.
+Schmidhuber's algorithmic ensemble \cite{schmidhuber} has computable
+critical inverse temperature $\ln2$ and a partition function equal to
+a halting probability there. Public bootstrap-percolation papers
+\cite{bootstrap,droplet} announce algorithmic exponent
+uncomputability across update families. We make no claim to the first
+uncomputable lattice exponent.
+
+Arithmetic limit classifications \cite{zheng} and density-pair
+realization \cite{density} are mathematical inputs. Symbolic growth
+invariants and entropy classifications already encode noncomputability
+in local rules \cite{meyerovitch,hochman}. Commensurate staircases
+\cite{bak,fisher,aubry} and wall-density transitions \cite{pokrovsky}
+also precede the present construction. Finite analytic spectral branches
+are governed by Rellich's theorem as presented by Kato \cite{kato}.
+Our new realization concerns a programmed logarithmic coefficient for
+a specified growing cut in a distinct-level-gapped family.
+Unusual chain entanglement laws \cite{movassagh,zhang,fredkin} and
+standard pure-state entanglement concentration \cite{bbps} are separate
+precedents; pair counting itself is elementary.
+
+Feynman--Kitaev computation \cite{feynman,ksv}, local histories
+\cite{adkllr,agik,gi}, multiple clocks \cite{breuckmann}, modified and
+graph clocks \cite{bCrosson}, idling and endpoint analysis
+\cite{caha}, and nonunitary histories \cite{usher} are established.
+Classical network resistance \cite{cserti,doyle} and resistance-based
+quantum witnesses \cite{belovs} are also established. The contribution
+here is their quantitative use in fresh-question extraction with
+unchanged Schmidt data and an explicit game-price certificate.
+Precision-dependent dimension witnesses already occur in
+Slofstra--Vidick \cite{sv}; the matched prices used here are the
+imports just stated.
+
+The quasi-local approximation argument below is standard in the spirit
+of Scholz--Werner \cite{scholz}; tensor/commuting separation is supplied
+by \cite{mip}. Thermal information \cite{wolf}, entangling rates
+\cite{bravyi,van}, squashed entanglement \cite{cw}, and correlation
+work costs \cite{huber} are prior inequalities. Our resource bounds
+substitute the imported price into these inequalities. Certified
+equilibrium algorithms \cite{fawzi} do not imply computability of an
+arbitrary limiting coupling coefficient.
+
+Instability already has direct precedents in Castilla-Castellano--Lucia
+\cite{instability} and the October version of Xu et al. \cite{xu}; their
+gap conventions must be kept distinct from ours. Rotationally symmetric
+gap undecidability \cite{rotation} is another separate result.
+Strict-boundary stability \cite{miekisz,miekisznew}, robust computation
+in tilings \cite{durand}, and low-temperature quasicrystalline Gibbs
+states \cite{taati} do not supply the selection and interface rules
+required by our conditional composition. We assert neither an open
+interaction-ball stability theorem nor a general local-noise law.

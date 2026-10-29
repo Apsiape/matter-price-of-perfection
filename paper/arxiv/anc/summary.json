@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "single_threaded": true,
+  "memory_limit_bytes": 900000000,
+  "checks": [
+    {
+      "script": "check_fk_lemma.py",
+      "status": "PASS",
+      "seconds": 3.282,
+      "peak_total_bytes": 145272832,
+      "sha256": "2a8aa94323dc1c44d762b2a414b53b8619e0a99e59a18681c025808698756294"
+    },
+    {
+      "script": "check_ruler_and_pairs.py",
+      "status": "PASS",
+      "seconds": 50.498,
+      "peak_total_bytes": 53514240,
+      "sha256": "e8a3ebda400bd8724d1fd45eace8c2d602889b37596482836fb321270c519b44"
+    },
+    {
+      "script": "check_fk_log.py",
+      "status": "PASS",
+      "seconds": 33.264,
+      "peak_total_bytes": 143835136,
+      "sha256": "50b2c7c147c7d63793be5d58d9f4cc42d33296183fc56f3444e913507f0d8cb7"
+    },
+    {
+      "script": "check_clock_dimension.py",
+      "status": "PASS",
+      "seconds": 3.156,
+      "peak_total_bytes": 396271616,
+      "sha256": "bd59734dd928780b3c46078f4c53984b89a984a4fa149acb0a4d1c4c690b37d2"
+    },
+    {
+      "script": "independent_checks.py",
+      "status": "PASS",
+      "seconds": 0.453,
+      "peak_total_bytes": 60182528,
+      "sha256": "807861031c6aab00fbfff3a99abdbb10d8a2a051161c3e727eeb7a82802f3369"
+    }
+  ],
+  "scope": "Finite floating-point consistency and exact rational identities; no limit or layout certification."
+}

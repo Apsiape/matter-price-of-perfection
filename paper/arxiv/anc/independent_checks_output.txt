@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "assertions": 1716,
+  "max_extraction_ratio": 4.948308160836955,
+  "minimum_operator_slack": -7.639107310045048e-12,
+  "green_adversary": [
+    {
+      "T": 2,
+      "resistance": 0.5416666666666669,
+      "ratio": 0.6276907249129468
+    },
+    {
+      "T": 4,
+      "resistance": 0.8514242424242401,
+      "ratio": 0.9157549517310704
+    },
+    {
+      "T": 8,
+      "resistance": 1.2195432308041967,
+      "ratio": 1.2680086079456958
+    },
+    {
+      "T": 16,
+      "resistance": 1.6224671496140501,
+      "ratio": 1.6600156162958342
+    }
+  ],
+  "depth_example": 22
+}
+ALL OK

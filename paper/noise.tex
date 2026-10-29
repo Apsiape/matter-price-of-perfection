@@ -1,0 +1,137 @@
+\section{Whole-cell perturbations}\label{sec:noise}
+All perturbations in this section are arbitrary Hermitian operators on
+the legal whole-cell space, bounded in total norm. A rank-one operator
+on a history is generally nonlocal in the physical lattice. No random
+or generic noise ensemble is being assumed.
+
+First, there can be no universal saturation of entanglement for every
+norm-$\eta$ perturbation. For example $V=\eta H/\norm H$ preserves
+the ground space and all its entropies. A positive perturbation
+annihilating that space gives another example. The energy comparison
+of Corollary~\ref{cor:perturbed} remains a lower certificate for every
+perturbation, but does not by itself supply an upper bound.
+
+\begin{proposition}[A collapse perturbation]\label{prop:collapse}
+Suppose an honest uniform history $\Phi_0$ of a product system input
+has loss $\ell_0\leq1$, so its entropy is at most $\log_2|X|$ and
+its energy is $\ell_0/M$. For $V=-\eta\ket{\Phi_0}\bra{\Phi_0}$,
+every unit ground vector $\Psi$ obeys
+\begin{equation}\label{eq:collapse}
+ |\langle\Phi_0,\Psi\rangle|^2\geq1-\frac{\ell_0}{M\eta}.
+\end{equation}
+If $L_A=\log_2D_A$ is an actual local support logarithm and
+$M\eta/L_A^2\to\infty$, then
+$S_A(\Psi)\leq\log_2|X|+o(1)$.
+\end{proposition}
+\begin{proof}
+Positivity of $H$ and the test vector give
+\[
+ -\eta|\langle\Phi_0,\Psi\rangle|^2
+ \leq E_0(H+V)\leq\ell_0/M-\eta.
+\]
+Rearrange to prove \eqref{eq:collapse}. The pure-state trace distance
+is at most $\sqrt{\ell_0/(M\eta)}$. Apply entropy continuity with
+the specified support dimension. Its error is bounded by that distance
+times $L_A$, plus binary entropy, and hence tends to zero.
+\end{proof}
+
+The condition involves dimension as well as $M$. In the conditional
+layout, $L_A=\operatorname{poly}(N)$ and $M$ grows exponentially
+in $N$, so fixed $\eta>0$ suffices. Mere divergence of $M$ without
+dimension control would not suffice.
+
+We next specify a different cell: a free-depth menu. For each
+admissible even depth $N_0\leq j\leq N$, it contains a classical
+sector running the admitted dimension-matched strategy at depth $j$,
+all with the same padded clock volume $M$. Unused system registers
+are frozen locally, and consistent depth labels are locally available
+to both players. The extraction uses a product rewinding on the whole
+direct sum and a uniform coefficient $C'_N$ polynomial in $N$.
+The menu has actual local support logarithm $L_A=\operatorname{poly}(N)$.
+Assume the uniform reference estimates and the depth-wise dimension
+law $\log_2d_j=4\alpha j+o(j)$; honest histories have entropy at most
+$4\alpha j+o(j)+O(1)$ and target loss
+$\eps_j=C_1 16^{-j}$. The same fixed game has both prices with
+coefficient $\alpha>0$. Implementing this menu in a local material
+is an extra layout obligation.
+
+Define $S_{\rm worst}(N,\eta)$ as the infimum of $S_A(\Psi)$ over
+all allowed $V$ with $\norm V\leq\eta$ and all unit pure ground
+vectors $\Psi$ of $H+V$.
+
+\begin{theorem}[Worst-case free-depth law]\label{thm:noise}
+In this menu model, put $a=M\eta$ and
+$r_N=\log_2(1/\max(\eps_N,a))$. In joint limits with
+$r_N/\log(N+2)\to\infty$,
+\begin{equation}\label{eq:noise}
+ S_{\rm worst}(N,\eta)=\alpha r_N(1+o(1)).
+\end{equation}
+For every perturbation the lower bound holds. The saturation upper
+bound uses a chosen rank-one whole-cell perturbation. In the separate
+collapse regime $M\eta\gg L_A^2$, Proposition~\ref{prop:collapse}
+gives the bounded upper entropy.
+\end{theorem}
+\begin{proof}
+The deepest admitted history has energy at most $\eps_N/M$.
+For every perturbed ground vector, the energy comparison and uniform
+extraction yield
+\[
+ S_A\geq\price\bigl(C'_N[\eps_N+2M\eta]\bigr).
+\]
+In the stated regime the effective loss tends to zero and its
+negative logarithm is $r_N+O(\log N)$. The imported price therefore
+gives $S_A\geq\alpha r_N(1-o(1))$.
+
+We first justify the unperturbed upper bound for the menu. The system
+dimension argument of Proposition~\ref{prop:frustration} in sector
+$j$ gives
+\[
+ e_j\geq\frac{16^{-j+o(j)}}{\operatorname{poly}(N)M}.
+\]
+Any fixed bounded sector also has positive fixed dimension-constrained
+loss, because the game's divergent price forbids a perfect strategy
+in that dimension. For each fixed $\delta>0$, sectors
+$j\leq(1-\delta)N$ are eventually above
+$\eps_N/M$. Thus every unperturbed minimizing sector has
+$j=N-o(N)$. Sector-wise normalized reference estimates squeeze its
+entropy to $4\alpha N+o(N)$. Superpositions of at most $O(N)$
+locally distinguished sectors contribute at most $\log_2O(N)$
+additional entropy. Uniform continuity errors still vanish on the
+assumed support, proving the unperturbed upper bound. In particular
+one can always choose a pure unperturbed ground vector with this bound.
+
+If $a\leq\eps_N$, choose $V=0$ for the desired upper bound.
+If $a>\eps_N$, fix $p>2$ and choose the \emph{smallest} admissible
+even depth $j$ satisfying
+\begin{equation}\label{eq:depthchoice}
+ \eps_j\leq aL_A^{-p}.
+\end{equation}
+When such a depth exists, the logarithmic regime ensures that it
+eventually exceeds the fixed lower cutoff and
+\[
+ 4j=\log_2(1/a)+p\log_2L_A+O(1).
+\]
+Take its honest history $\Phi_j$ and
+$V=-\eta\ket{\Phi_j}\bra{\Phi_j}$. The same variational argument
+as \eqref{eq:collapse} gives overlap at least $1-L_A^{-p}$ with
+every perturbed ground vector. Entropy continuity costs
+$O(L_A^{1-p/2})+h_2(L_A^{-p/2})=o(1)$. Therefore
+\[
+ S_A\leq4\alpha j+o(j)+O(1)
+       =\alpha\log_2(1/a)(1+o(1)),
+\]
+since $\log L_A=O(\log N)=o(r_N)$.
+If \eqref{eq:depthchoice} would require $j>N$, then
+$1<a/\eps_N<L_A^p$ up to a fixed endpoint factor. In that case
+$V=0$ again gives the upper bound, as the difference in the relevant
+negative logarithms is only $O(\log N)=o(r_N)$. This handles the
+precision floor and completes the saturation proof.
+\end{proof}
+
+The effective variable is $M\eta$, together with the extraction
+coefficient. In a noise-dominated logarithmic regime, changing $T$ at
+fixed total $\eta$ and fixed $k$ inserts the term
+$-k\alpha\log_2(T+1)$. This observation is confined to that regime
+and this menu model. Open-clock perturbation analyses such as
+\cite{tempel} concern their specified dynamics and do not establish
+a local-noise version of \eqref{eq:noise}.

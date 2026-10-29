@@ -1,0 +1,300 @@
+\section{Referee extraction and its clock-grid cost}\label{sec:referee}
+Let $G=(X,Y,\mathcal A,\mathcal B,\pi,V)$ be finite. Each party has
+a system register, a clock, old question, answer and work registers.
+The initialization state of the old registers is
+\[
+ \ket{\pi,0}=\sum_{x,y}\sqrt{\pi(x,y)}\ket{x,y}\ket{0}_{\rm ans,work}.
+\]
+The local circuits $U_A,U_B$ read their own question without changing
+it; neither uses the other's question. Their coherent outputs are tested
+by the diagonal losing projection $\Pi_{\rm lose}$. Put
+$Q=(U_A\otimes U_B)^*\Pi_{\rm lose}(U_A\otimes U_B)$.
+Equation~\eqref{eq:cell} is an exact assumption on a legal bipartite
+tensor product; the two clocks belong to their respective parties.
+Extra idle clocks can belong entirely to Alice. Product rewinding is
+the controlled local prefix circuit on each party's own clock and data.
+No nearest-neighbour realization of this whole initialization projector
+is implicit in the assumption.
+
+On fresh external questions drawn with the original joint law $\pi$,
+run these circuits on the system with new local pure answer/work
+ancillas. All old registers and clocks are spectators. The resulting
+loss effect on the old register space is
+\begin{equation}\label{eq:loss-effect}
+ F=I_{\rm old}\otimes F_{\rm sys},\qquad 0\leq F\leq I,
+ \qquad [F,P]=0,\qquad PFP=PQP.
+\end{equation}
+The last identity follows by expanding the coherent old questions:
+preserved labels and the diagonal test kill cross terms, including
+when $\pi$ is correlated. In particular
+$\bra{Pv}F\ket{Pv}=\norm{QPv}^2$.
+Keeping spectators preserves the shared Schmidt data. There is no
+postselection at a clock corner.
+
+\begin{lemma}[Elementary two-clock extraction]\label{lem:elementary}
+For two clocks, a legal unit vector of energy $\lambda$ yields loss
+at most $5(1+\sqrt{2T})^2M\lambda$ under the fresh-question strategy.
+If $\eps_{\rm opt}$ is the least initialized loss with these circuits,
+$E_0(H)\leq\eps_{\rm opt}/M$.
+\end{lemma}
+\begin{proof}
+Write $W^*\Psi=\sum_v\ket v\psi_v$. Positivity gives
+\[
+ E_{\rm prop}=\sum_{\{v,w\}}\norm{\psi_v-\psi_w}^2\leq\lambda,
+ \quad\norm{(I-P)\psi_0}^2\leq\lambda,
+ \quad\norm{Q\psi_t}^2\leq\lambda,
+\]
+where $t=(T,T)$. A path of length at most $2T$ to either corner gives
+$\norm{\psi_v-\psi_c}\leq\sqrt{2T\lambda}$ by Cauchy--Schwarz.
+Set $a=1+\sqrt{2T}$. Then
+$\norm{(I-P)\psi_v}\leq a\sqrt\lambda$ and
+$\norm{QP\psi_v}\leq2a\sqrt\lambda$.
+By \eqref{eq:loss-effect}, the cross term between initialized and
+uninitialized components vanishes. Summing their losses over the $M$
+orthogonal clock components gives $M(4a^2+a^2)\lambda$.
+For the variational bound take the uniform clock with an initialized
+optimal system input. Propagation and initialization vanish; the final
+corner penalty is $\eps_{\rm opt}/M$.
+\end{proof}
+
+\begin{lemma}[Hilbert-valued resistance inequality]\label{lem:resistance}
+For a connected graph Laplacian $L$, a zero-sum real vector $w$,
+and Hilbert-space vectors $\psi_v$,
+\begin{equation}\label{eq:resistance}
+ \norm{\sum_vw_v\psi_v}^2\leq(w^*L^+w)
+          \sum_{\{v,z\}}\norm{\psi_v-\psi_z}^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Diagonalize $L$ on the orthogonal complement of constants. In that
+basis the left vector is the inner product of the scalar coefficients
+$L^{+1/2}w$ with the Hilbert-valued coefficients $L^{1/2}\psi$.
+Hilbert-space Cauchy--Schwarz gives \eqref{eq:resistance}. The constant
+mode drops out because $w$ sums to zero.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:extraction}: energy and price]
+Let $m=M^{-1}\sum_v\psi_v$, $d_v=\psi_v-m$, and $G=G_k$.
+Using $w=\delta_c-M^{-1}\one$ in Lemma~\ref{lem:resistance} gives
+$\norm{d_c}\leq\sqrt{G\lambda}$ at either corner. Poincar\'e's
+inequality gives $\sum_v\norm{d_v}^2\leq\lambda/\mu_1$.
+The corner initialization and test imply
+\begin{align*}
+ \norm{(I-P)m}&\leq(1+\sqrt G)\sqrt\lambda,\\
+ \norm{QPm}&\leq\sqrt\lambda+\norm{(I-P)m}+2\sqrt{G\lambda}.
+\end{align*}
+Define $\ell(v)=\bra vF\ket v$. Its square root is a seminorm,
+and \eqref{eq:loss-effect} implies
+\[
+ \sqrt{\ell(m)}\leq\norm{QPm}+\norm{(I-P)m}
+                       \leq(3+4\sqrt G)\sqrt\lambda.
+\]
+Consequently
+\begin{equation}\label{eq:extraction-proof}
+ \sum_v\ell(\psi_v)\leq2M\ell(m)+2\sum_v\norm{d_v}^2
+            \leq C_kM\lambda.
+\end{equation}
+The shared state is exactly $W^*\Psi$, augmented only by local pure
+ancillas. Since $W$ is a product unitary, its Schmidt coefficients,
+rank and entropy are unchanged. Compressing both local POVMs to their
+Schmidt supports yields a legitimate strategy of local dimension
+$\SR(\Psi)$, proving the dimension bound. Pure-state one-way
+distillation equals marginal entropy \cite{bbps}; the definition
+\eqref{eq:price} proves the entropy bound.
+
+The quadratic-form inequality \eqref{eq:extraction-proof} is an operator
+inequality for a fixed fresh-question loss effect. It therefore holds
+after taking expectation in any legal density matrix. Local unitary
+invariance of $\ED$ and \eqref{eq:price} prove the mixed-state
+certificate. No entropy of a mixed marginal is being identified with
+its entanglement.
+\end{proof}
+
+\subsection{The resistance trichotomy}
+The path eigenvalues and corner weights are
+\[
+ \mu_a=4\sin^2\frac{\pi a}{2n},\quad
+ w_0=1/n,\quad w_a=\frac2n\cos^2\frac{\pi a}{2n}\quad(1\leq a<n).
+\]
+Thus, exactly,
+\begin{equation}\label{eq:greensum}
+ G_k=\sum_{\substack{0\leq a_1,\ldots,a_k<n\\(a_1,\ldots,a_k)\ne0}}
+       \frac{w_{a_1}\cdots w_{a_k}}{\mu_{a_1}+\cdots+\mu_{a_k}}.
+\end{equation}
+The first path eigenvalue satisfies $\mu_1\geq4/n^2$. For $k\geq2$,
+$M\mu_1\geq4n^{k-2}$, proving the variance term in the theorem.
+
+For a path, the centered potential solving
+$Lg=\delta_0-n^{-1}\one$ has edge differences
+$g_j-g_{j+1}=(n-1-j)/n$. Hence its energy, equal to $G_1$, is
+\begin{equation}\label{eq:pathgreen}
+ G_1=\frac1{n^2}\sum_{j=1}^{n-1}j^2
+       =\frac{T(2T+1)}{6(T+1)}.
+\end{equation}
+For two paths use $w_a\leq2/n$ and
+$\mu_a\geq4a^2/n^2$ to obtain
+\[
+ G_2\leq\sum_{\substack{0\leq a,b\leq T\\(a,b)\ne(0,0)}}\frac1{a^2+b^2}.
+\]
+The axes contribute at most $\pi^2/3$ and $(1,1)$ contributes $1/2$.
+Each remaining positive-index term is bounded by the integral of
+$(x^2+y^2)^{-1}$ over $[a-1,a]\times[b-1,b]$. Those cells lie inside
+the quarter annulus $1\leq\sqrt{x^2+y^2}\leq\sqrt2T$. Therefore
+\begin{equation}\label{eq:greenbound}
+ G_2\leq\frac\pi2\ln T+\frac{\pi^2}3+\frac12+\frac\pi4\ln2
+          <\frac\pi2\ln T+4.4\qquad(T\geq2).
+\end{equation}
+To identify the leading constant, for $a,b\geq1$ compare the exact
+summand in \eqref{eq:greensum} with
+$4/[\pi^2(a^2+b^2)]$. Taylor bounds for sine and cosine, and
+$\sin x\geq2x/\pi$ on $[0,\pi/2]$, bound the difference by
+$O(n^{-2})$ uniformly. Summing contributes $O(1)$; the axes are
+bounded. The quadrant sum of $(a^2+b^2)^{-1}$ is
+$(\pi/2)\ln n+O(1)$ by unit-square integration, proving
+$G_2=(2/\pi)\ln T+O(1)$.
+
+For three paths, \eqref{eq:greensum} implies
+\[
+ G_3\leq\frac2n\sum_{a\ne0}|a|^{-2}
+ \leq\frac2n\sum_{m=1}^T\left(3+\frac3m+\frac1{m^2}\right)<14.
+\]
+The shell $\max_i a_i=m$ has $3m^2+3m+1$ vectors. The last bound
+uses $1/m,1/m^2\leq1$ and $T/n<1$. Thus
+\[
+ C_3\leq2(3+4\sqrt{14})^2+1/2<647.
+\]
+For any fixed $k>3$ the same shell estimate is $O(T^{k-2})$ before
+the prefactor $2^{k-2}n^{2-k}$, so $G_k=O(1)$.
+This completes the resistance part of Theorem~\ref{thm:extraction}.
+The dimensional phenomenon is classical network theory
+\cite{cserti,doyle}; the application is the extraction inequality.
+
+\begin{proposition}[The logarithmic obstruction for all low-energy vectors]\label{prop:lognecessary}
+No constant independent of $T$ can replace the two-clock extraction
+factor for all legal low-energy vectors in this general cell class.
+\end{proposition}
+\begin{proof}
+Let $c$ be the losing corner, $g=L_2^+\delta_c$, $G=g_c$, and
+$f=\one-g/G$. Then $f_c=0$, $M^{-1}\sum_v f_v=1$, and
+$f^*L_2f=1/G$. Take $P=I,Q=I$, with the always-losing scalar
+system and normalized clock $f/\norm f$. The loss is one and the
+energy is $\lambda=1/(G\norm f^2)$, so
+\[
+ \frac{\text{loss}}{M\lambda}=G\frac{\norm f^2}{M}\geq G.
+\]
+Since $G\to\infty$, a uniform constant is impossible. A direct-sum
+zero-loss system sector can be added. This is an all-low-energy-state
+obstruction and makes no assertion about a special game's ground
+states alone.
+\end{proof}
+
+\subsection{Approximate clock factorization}\label{sec:factorization}
+\begin{proposition}[Normalized entropy-support estimate]\label{prop:factorization}
+For $k\geq2$ put $u=\sqrt M\,m$ and
+$z=\ket{\rm unif}\otimes Pu$. If
+$b=(3/2+\sqrt{G_k})\sqrt{M\lambda}<1$, then
+\[
+ \norm{W^*\Psi-z}\leq b,\qquad
+ \norm{W^*\Psi-z/\norm z}\leq2b.
+\]
+Let $t$ be the actual trace distance between the reduced Alice states
+of these two unit vectors. In the small-distance regime,
+\begin{equation}\label{eq:entropyupper}
+ S_A(\Psi)\leq\log_2d_{{\rm sys},A}+\log_2|X|
+                   +t\log_2(D_A-1)+h_2(t),\qquad t\leq2b.
+\end{equation}
+$D_A$ is an actual local support dimension of the compared states.
+\end{proposition}
+\begin{proof}
+Poincar\'e gives
+$\norm{W^*\Psi-\ket{\rm unif}\otimes u}\leq\sqrt{M\lambda}/2$.
+Initialization bounds $\norm{(I-P)u}\leq(1+\sqrt G)\sqrt{M\lambda}$.
+Their triangle inequality gives the first estimate. Since $\Psi$ is
+unit, $|\norm z-1|\leq b$ and $z\ne0$, giving the factor two upon
+normalization. The normalized reference consists of product-uniform
+local clocks, initialized questions and work, and a system vector.
+Its entropy is at most $\log_2|X|+\log_2d_{{\rm sys},A}$.
+Local rewinding leaves entropy invariant. The trace distance is no
+larger than the vector distance; apply the finite-dimensional
+entropy-continuity bound of \cite{audenaert}. One may replace $t$
+by $2b$ only where that bound is monotone, for example
+$2b\leq1-1/D_A$.
+\end{proof}
+
+There is no compulsory additive $\log_2(T+1)$ in this reference
+entropy. There is also no exact clock separability at positive energy.
+For $P=I,Q=0$, orthogonal path modes $u$ (uniform) and $v$ (first
+excited) give the entangled clock state
+$(u\otimes u+\delta v\otimes v)/\sqrt{1+\delta^2}$, of energy
+$2\mu_1\delta^2/(1+\delta^2)$ and entropy
+$h_2(\delta^2/(1+\delta^2))>0$.
+
+For a ground state with $M\lambda\leq\eps_N$, an adequate continuity
+condition, if $q$ counts work qubits, is
+\[
+ \sqrt{\eps_N}(1+\sqrt G)
+       [q+\log_2d_{{\rm sys},A}+\log_2(T+1)+O(1)]\longrightarrow0.
+\]
+It is a condition on the number of qubits, not on its logarithm.
+
+\subsection{Perturbation and dimension certificates}\label{sec:certificates}
+\begin{corollary}[Total-norm perturbations]\label{cor:perturbed}
+For every legal-space Hermitian $V$ with $\norm V\leq\eta$ and every
+pure ground vector $\Psi_\eta$ of $H+V$,
+\[
+ S_A(\Psi_\eta)\geq\price\bigl(C_k[\eps_{\rm opt}+2M\eta]\bigr),
+ \quad \SR(\Psi_\eta)\geq D_G\bigl(C_k[\eps_{\rm opt}+2M\eta]\bigr).
+\]
+\end{corollary}
+\begin{proof}
+The variational principle gives
+$\bra{\Psi_\eta}H\ket{\Psi_\eta}\leq E_0(H)+2\eta$.
+Use Lemma~\ref{lem:elementary} and Theorem~\ref{thm:extraction}.
+\end{proof}
+Here $\eta$ is the total cell operator norm. Summing local fields may
+produce a norm growing with the number of sites.
+
+\begin{proposition}[Register-limited frustration]\label{prop:frustration}
+In a fixed classical program block with $n_s$ measured system qubits
+per party, let $e$ be the cell ground energy. Then
+\[
+ D_G(C_kMe)\leq2^{n_s}.
+\]
+If $\log_2D_G(\eps)=\alpha\log_2(1/\eps)+o(\log(1/\eps))$,
+$\alpha>0$, this implies
+\begin{equation}\label{eq:frustration}
+ e\geq\frac{2^{-n_s/\alpha-o(n_s)}}{C_kM}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+After extraction, trace out old registers and clocks locally. The
+fresh measurements act only on the measured system, so its mixed
+state has the same loss and dimension $2^{n_s}$ on each side. Apply
+the definition of $D_G$. For each $\xi>0$ the price is at least
+$(\alpha-\xi)\log_2(1/\eps)$ at sufficiently small $\eps$.
+Hence $C_kMe\geq2^{-n_s/(\alpha-\xi)}$; outside this small-loss range
+the claimed asymptotic lower bound is weaker. Let $\xi$ tend to zero.
+The argument is uniform over fixed classical program blocks. A quantum
+program used by the measurement must instead be counted in the system
+dimension.
+\end{proof}
+
+A matching upper frustration law needs a dimension-matched admitted
+strategy. Clock propagation does not by itself fix the distinct cell
+gap: different almost-winning system sectors can have arbitrarily
+close low eigenvalues. Honest uniform histories have energy loss/$M$,
+which is a variational scale, not a universal gap formula. A fixed
+Hamiltonian minimizes a linear functional of the state; its
+measurement encoding must therefore already be specified. Fixed
+circuits and classical program blocks suffice, without exhausting
+all possible encodings. Finally the elementary extraction factor
+shows that $\log T=o(\log(1/\eps))$ is sufficient to preserve a
+logarithmic coefficient; it is not a necessary-and-sufficient theorem.
+
+An extension to arbitrary physical states is possible if the legal
+projection factorizes across the cut, $W$ has a product-unitary
+extension, the illegal space is invariant and has energy at least one,
+and the extraction processes its clock labels as spectators. The illegal
+weight is then bounded by its energy and its loss by its weight; since
+$C_kM\geq1$, the same inequality holds. Block diagonality or a list
+of forbidden clock strings alone does not establish these hypotheses.

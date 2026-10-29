@@ -1,0 +1,57 @@
+G(1) = 0.31250 
+G(2) = 0.54167 G/lnT = 0.7815
+G(4) = 0.85142 G/lnT = 0.6142
+G(8) = 1.21954 G/lnT = 0.5865
+G(16) = 1.62247 G/lnT = 0.5852
+G(32) = 2.04417 G/lnT = 0.5898
+G(64) = 2.47557 G/lnT = 0.5952
+G(128) = 2.91189 G/lnT = 0.6001
+G(256) = 3.35068 G/lnT = 0.6043
+G(512) = 3.79071 G/lnT = 0.6076
+G(1024) = 4.23136 G/lnT = 0.6105
+G(2048) = 4.67232 G/lnT = 0.6128
+inst 0 T= 2 eps=6.599e-17 gs L/eps=-0.0768 max L/(N lam)=3.247 CG=71.2
+inst 0 T= 4 eps=6.599e-17 gs L/eps=-0.0937 max L/(N lam)=3.627 CG=90.0
+inst 0 T= 8 eps=6.599e-17 gs L/eps=-0.0466 max L/(N lam)=4.263 CG=110.5
+inst 0 T=16 eps=6.599e-17 gs L/eps=-0.0543 max L/(N lam)=4.944 CG=131.6
+inst 0 T=24 eps=6.599e-17 gs L/eps=-0.0383 max L/(N lam)=6.024 CG=143.9
+inst 1 T= 2 eps=3.216e-03 gs L/eps=1.1202 max L/(N lam)=3.917 CG=71.2
+inst 1 T= 4 eps=3.216e-03 gs L/eps=1.1191 max L/(N lam)=4.625 CG=90.0
+inst 1 T= 8 eps=3.216e-03 gs L/eps=1.1180 max L/(N lam)=5.449 CG=110.5
+inst 1 T=16 eps=3.216e-03 gs L/eps=1.1171 max L/(N lam)=6.346 CG=131.6
+inst 1 T=24 eps=3.216e-03 gs L/eps=1.1167 max L/(N lam)=6.891 CG=143.9
+inst 2 T= 2 eps=2.195e-01 gs L/eps=1.1035 max L/(N lam)=3.597 CG=71.2
+inst 2 T= 4 eps=2.195e-01 gs L/eps=1.1026 max L/(N lam)=4.252 CG=90.0
+inst 2 T= 8 eps=2.195e-01 gs L/eps=1.1018 max L/(N lam)=5.017 CG=110.5
+inst 2 T=16 eps=2.195e-01 gs L/eps=1.1011 max L/(N lam)=5.850 CG=131.6
+inst 2 T=24 eps=2.195e-01 gs L/eps=1.1008 max L/(N lam)=6.356 CG=143.9
+inst 3 T= 2 eps=9.475e-02 gs L/eps=1.1671 max L/(N lam)=3.967 CG=71.2
+inst 3 T= 4 eps=9.475e-02 gs L/eps=1.1656 max L/(N lam)=4.685 CG=90.0
+inst 3 T= 8 eps=9.475e-02 gs L/eps=1.1641 max L/(N lam)=5.521 CG=110.5
+inst 3 T=16 eps=9.475e-02 gs L/eps=1.1630 max L/(N lam)=6.431 CG=131.6
+inst 3 T=24 eps=9.475e-02 gs L/eps=1.1625 max L/(N lam)=6.984 CG=143.9
+inst 4 T= 2 eps=4.024e-01 gs L/eps=1.0733 max L/(N lam)=3.258 CG=71.2
+inst 4 T= 4 eps=4.024e-01 gs L/eps=1.0728 max L/(N lam)=3.857 CG=90.0
+inst 4 T= 8 eps=4.024e-01 gs L/eps=1.0723 max L/(N lam)=4.590 CG=110.5
+inst 4 T=16 eps=4.024e-01 gs L/eps=1.0719 max L/(N lam)=5.389 CG=131.6
+inst 4 T=24 eps=4.024e-01 gs L/eps=1.0717 max L/(N lam)=5.785 CG=143.9
+inst 5 T= 2 eps=2.197e-01 gs L/eps=1.0929 max L/(N lam)=3.562 CG=71.2
+inst 5 T= 4 eps=2.197e-01 gs L/eps=1.0921 max L/(N lam)=4.212 CG=90.0
+inst 5 T= 8 eps=2.197e-01 gs L/eps=1.0914 max L/(N lam)=4.969 CG=110.5
+inst 5 T=16 eps=2.197e-01 gs L/eps=1.0908 max L/(N lam)=5.795 CG=131.6
+inst 5 T=24 eps=2.197e-01 gs L/eps=1.0905 max L/(N lam)=6.297 CG=143.9
+inst 6 T= 2 eps=1.081e-01 gs L/eps=1.0770 max L/(N lam)=3.645 CG=71.2
+inst 6 T= 4 eps=1.081e-01 gs L/eps=1.0763 max L/(N lam)=4.308 CG=90.0
+inst 6 T= 8 eps=1.081e-01 gs L/eps=1.0756 max L/(N lam)=5.080 CG=110.5
+inst 6 T=16 eps=1.081e-01 gs L/eps=1.0751 max L/(N lam)=5.921 CG=131.6
+inst 6 T=24 eps=1.081e-01 gs L/eps=1.0749 max L/(N lam)=6.432 CG=143.9
+inst 7 T= 2 eps=4.119e-02 gs L/eps=1.1015 max L/(N lam)=3.808 CG=71.2
+inst 7 T= 4 eps=4.119e-02 gs L/eps=1.1006 max L/(N lam)=4.497 CG=90.0
+inst 7 T= 8 eps=4.119e-02 gs L/eps=1.0997 max L/(N lam)=5.300 CG=110.5
+inst 7 T=16 eps=4.119e-02 gs L/eps=1.0989 max L/(N lam)=6.175 CG=131.6
+inst 7 T=24 eps=4.119e-02 gs L/eps=1.0986 max L/(N lam)=6.706 CG=143.9
+adversarial T=4: max L_ext/(N lam) = 0.989 (G = 0.851)
+adversarial T=8: max L_ext/(N lam) = 1.004 (G = 1.220)
+adversarial T=16: max L_ext/(N lam) = 1.181 (G = 1.622)
+adversarial T=32: max L_ext/(N lam) = 1.359 (G = 2.044)
+ALL OK

@@ -1,0 +1,167 @@
+\section{Temperature, preparation time, and work}\label{sec:thermal}
+The mixed-state certificate \eqref{eq:mixed-main} applies to any legal
+state, including a Gibbs state when the legal space is a genuine
+bipartite tensor product. Its composition with established physical
+inequalities gives necessary resource bounds. We set $k_B=\hbar=1$.
+We use \cite{cw}
+\begin{equation}\label{eq:mi-entanglement}
+ \ED(\rho)\leq E_D(\rho)\leq E_{\rm sq}(\rho)\leq I(A:B)_\rho/2.
+\end{equation}
+The last inequality uses the trivial extension in the definition of
+squashed entanglement. All quantities in \eqref{eq:mi-entanglement}
+are in bits.
+
+\begin{theorem}[Necessary thermal, temporal, and work budgets]\label{thm:resources}
+Suppose a finite bipartite state plays $G$ at loss $\ell$.
+For the Gibbs state of $H=H_A+H_B+H_\partial$ at inverse temperature
+$\beta$,
+\begin{equation}\label{eq:temperature}
+ \beta\norm{H_\partial}\geq(\ln2)\price(\ell).
+\end{equation}
+For unitary preparation from a product state, with time-dependent cut
+interaction on fixed interacting dimensions, let $d_\partial$ be
+the smaller interacting local dimension. Then
+\begin{equation}\label{eq:time}
+ 18\int_0^t\norm{H_\partial(s)}\log_2d_\partial\,ds
+                       \geq\price(\ell).
+\end{equation}
+For average-work isothermal preparation at temperature $\Theta$ from
+$\gamma_A\otimes\gamma_B$, with the noninteracting Hamiltonian
+$H_A+H_B$ restored at the endpoint and no uncharged resource,
+\begin{equation}\label{eq:work}
+ \mathcal W\geq2\Theta\ln2\,\price(\ell).
+\end{equation}
+If $\price(\ell)=\alpha_G\log_2(1/\ell)+o(\log(1/\ell))$,
+the same imported coefficient appears in the right sides. These are
+lower bounds; no matching preparation protocol is asserted.
+\end{theorem}
+\begin{proof}
+For the Gibbs state $\rho$, put $\sigma=\rho_A\otimes\rho_B$.
+Free-energy minimality gives
+\[
+ \beta^{-1}I_{\rm nats}(A:B)_\rho
+ \leq\tr[H(\sigma-\rho)]
+ =\tr[H_\partial(\sigma-\rho)]\leq2\norm{H_\partial}.
+\]
+The equality cancels local Hamiltonian terms using equal marginals.
+This is the thermal mutual-information bound of \cite{wolf}.
+Equation~\eqref{eq:mi-entanglement} and
+$\ED(\rho)\geq\price(\ell)$ prove \eqref{eq:temperature}, with
+the factor $\ln2$ converting bits to nats.
+
+For pure product input, the small incremental entangling theorem
+\cite{van}, with constant $18$, bounds the entropy derivative by
+$18\norm{H_\partial(s)}\log_2d_\partial$, independent of spectator
+dimensions. Integrate from zero initial entropy. For mixed product
+input, purify each party locally, evolve with those purifying registers
+as spectators, and use monotonicity under local discarding. This bounds
+the final distillable entanglement by the same integrated entropy,
+and gives \eqref{eq:time}. If $\norm{H_\partial}\leq J$, it yields
+$t\geq\price(\ell)/(18J\log_2d_\partial)$. Pre-existing shared
+entanglement or an increasing interface is outside this hypothesis.
+
+For work, the stipulated free-energy accounting gives
+\[
+ \mathcal W\geq F(\rho)-F(\gamma_A\otimes\gamma_B)
+       =\Theta D(\rho\Vert\gamma_A\otimes\gamma_B),
+\]
+with natural relative entropy. Its exact decomposition is
+\begin{align*}
+ D(\rho\Vert\gamma_A\otimes\gamma_B)
+ &=I_{\rm nats}(A:B)_\rho
+   +D(\rho_A\Vert\gamma_A)+D(\rho_B\Vert\gamma_B)\\
+ &\geq I_{\rm nats}(A:B)_\rho.
+\end{align*}
+Apply \eqref{eq:mi-entanglement}. This is the standard correlation
+work bound \cite{huber}, with the game's usable demand inserted.
+\end{proof}
+
+Subtracting a scalar from the cut interaction can improve its norm
+without changing the argument. The bounds apply to the true physical
+tensor product; a nonproduct conditioning on legality cannot silently
+replace that state space. The work statement is not a general equality
+between creation work and any local-reset heat convention.
+
+\begin{corollary}[Fixed-temperature and fixed-time coefficients]\label{cor:fixedresources}
+For Gibbs states with a uniform cut norm $\norm{H_\partial}\leq J$,
+every nonnegative entanglement quantity $E\leq I/2$ satisfies
+\[
+ 0\leq E\leq\beta J/\ln2.
+\]
+At fixed positive temperature its coefficient after division by
+$\log_2(1/g)$ is zero. The same conclusion holds at fixed preparation
+time from product input when the integrated interface rate is uniformly
+bounded. For a two-corner referee with $J\leq2$, the thermal bound is
+$E\leq2\beta/\ln2$.
+\end{corollary}
+\begin{proof}
+The first bound is the Gibbs mutual-information inequality. For
+preparation, local purifications give
+$I(A:B)/2\leq S(A\,\text{with local purifier})$, since mutual
+information decreases under local discarding. The integrated rate
+therefore bounds every $E\leq I/2$. Divide either uniform bound by
+the divergent logarithm.
+\end{proof}
+No gap assumption is needed here. Thermal marginal entropy includes
+local thermal entropy and is not covered. Nor are all possible mixed
+entanglement measures, growing interfaces, or fluctuating-wall Gibbs
+states without the specified cut and state convention. An uncomputable
+coefficient may appear in these necessary precision inequalities
+without being a proved optimal resource rate or the only observable
+that retains it.
+
+\subsection{A finite-dimensional Gibbs energy estimate}
+For any finite legal Gibbs Hamiltonian of dimension $D$ and minimum
+energy $e_0$, free-energy minimality against a pure ground state gives
+\begin{equation}\label{eq:gibbsenergy}
+ \tr(\rho_\Theta H)\leq e_0+\Theta\ln D.
+\end{equation}
+Thus the extraction certificate has effective precision at most
+$C'[\eps_N+M\Theta\ln D]$ when $Me_0\leq\eps_N$.
+To retain a depth-$N$ leading coefficient in this lower certificate it
+suffices that
+\[
+ -\log_2(C'M\Theta\ln D)\geq4N-o(N)
+\]
+and $\log_2C'=o(N)$, or more restrictively
+$M\Theta\ln D=O(\eps_N)$. Smallness relative only to an inverse
+polynomial of depth does not imply this exponential precision. No
+claim of a thermal material region follows without controlling the
+full physical dimension, illegal sectors, and wall distribution.
+
+\subsection{Thermal pair correlations}\label{sec:thermalpairs}
+The Bell-pair cell provides an exact comparison at the level of mutual
+information. For a pair \eqref{eq:pair}, let $d=2^{b_0}$ and
+\[
+ \rho_\beta=\frac{I+(e^\beta-1)\ket{\Phi_d}\bra{\Phi_d}}
+                         {Z},\qquad Z=e^\beta+d^2-1,\qquad F=e^\beta/Z.
+\]
+Both marginals are $I/d$. The mutual information in bits is
+\begin{equation}\label{eq:pairmi}
+ i_{b_0}(\beta)=2\log_2d+F\log_2F
+                +(1-F)\log_2\frac{1-F}{d^2-1}.
+\end{equation}
+It is computable for computable $\beta$, positive for every $\beta>0$,
+and tends to $2b_0$ as $\beta\to\infty$. Positivity follows because
+equality with the product of the maximally mixed marginals occurs only
+at $\beta=0$. Independent disjoint pairs therefore give
+$I(R_c:R_c^c)=m(h)i_{b_0}(\beta)$ at every fixed positive inverse
+temperature. The normalized half-mutual-information coefficient is
+the programmed coefficient times $i_{b_0}(\beta)/(2b_0)$.
+
+This is not all-temperature entanglement survival. These isotropic
+states are separable exactly when
+\begin{equation}\label{eq:separable}
+ F\leq1/d\quad\Longleftrightarrow\quad e^\beta\leq d+1.
+\end{equation}
+For the separable direction, twirl product states by
+$U\otimes\overline U$; their Bell overlap ranges over $[0,1/d]$
+and determines the isotropic state. For the other direction, partial
+transpose has an antisymmetric eigenvalue
+$[1-(e^\beta-1)/d]/Z<0$. This is consistent with the isotropic-state
+criterion in \cite{horodecki}. In particular, for
+$\Theta\geq1/\ln(d+1)$, every pair and their product are separable
+despite nonzero mutual information. The comparison concerns total
+correlations. Its cut norm grows with the number of pairs and hence
+does not satisfy the bounded-interface hypothesis of
+Corollary~\ref{cor:fixedresources}.

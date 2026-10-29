@@ -1,0 +1,37 @@
+\section{The finite-dimensional correlation ceiling}\label{sec:qa}
+Let $\mathcal A_X,\mathcal A_Y$ be disjoint quasi-local spin
+algebras, each the norm closure of finite-site matrix algebras, with
+finite local site dimension. A state may be mixed or an arbitrary
+infinite-volume state. Measurement families are finite and their
+effects belong to these quasi-local algebras.
+
+\begin{proposition}[Quasi-local correlations are approximable]\label{prop:qa}
+Every such correlation belongs to $C_{qa}=\overline{C_q}$, the
+closure of finite-dimensional tensor-product correlations. If
+$\omega_{qa}(G)<1$, its loss in $G$ is at least
+$1-\omega_{qa}(G)$. In a legal referee cell this implies
+\[
+ e\geq\frac{1-\omega_{qa}(G)}{C_kM}.
+\]
+\end{proposition}
+\begin{proof}
+Choose increasing finite subsets of $X$ and conditional expectations
+onto their matrix algebras, using normalized trace on the omitted
+sites. These maps are unital completely positive, preserve a POVM's
+positivity and sum, and converge in norm on every quasi-local
+observable. Do the same independently in $Y$. Restrict the state to
+the resulting finite tensor product of matrix algebras; it is a
+density matrix. Thus every approximating correlation is in $C_q$.
+Norm convergence of the finitely many effects gives convergence of
+all joint probabilities and proves membership in its closure. A Bell
+functional is continuous on this finite probability space, proving
+the loss floor. Compose the floor with extraction for the energy
+inequality.
+\end{proof}
+
+This standard approximation principle \cite{scholz} does not depend
+on a pure-state infinite-volume tensor splitting. General commuting
+operator correlations need not admit these quasi-local measurements;
+the distinction between $C_{qa}$ and $C_{qc}$ is substantive
+\cite{mip}. The cell energy floor retains its normalization $C_kM$;
+it need not be bounded away from zero as the clock grows.

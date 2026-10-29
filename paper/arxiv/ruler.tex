@@ -1,0 +1,161 @@
+\section{The ruler and cell transfer}\label{sec:ruler}
+We state precisely the imported geometric interface. With
+$r=1/16$, a perfect cell of pitch $p\geq2$ has interior side $h=p-1$,
+and the classical density is
+\begin{equation}\label{eq:ruler}
+ f_g(p)=-\frac gp+\frac r{p^2},\qquad
+ g_p=r\left(\frac1p+\frac1{p+1}\right),\qquad
+ f_g(p)-f_g(p+1)=\frac{g_p-g}{p(p+1)}.
+\end{equation}
+The five symbols are $W,V,A,S,D$. For orientation, the allowed horizontal
+pairs are
+\[
+ WW,AA,SA,DS,DD,AV,SV,VS,VD;
+\]
+the allowed top-to-bottom pairs are
+\[
+ WS,WA,WV,SW,DW,VW,AA,AS,SD,DD,VV.
+\]
+Every other pair costs one. An onsite $W$ bonus is $-g$; a vertical
+$VW$ bond costs $r$. We use the forcing and charging theorems of
+\cite[Lemmas 2.1--2.2]{gap}, rather than a new rule-level proof.
+
+For small $g>0$, $p_*(g)=p$ on $(g_p,g_{p-1})$, with both $p,p+1$
+minimizing at $g_p$. Each stripe can choose its own horizontal phase.
+The source's Corollary 2.3 gives separation from every nonminimizing
+classical block by at least $\min(5/8,L\delta(g))$, after also making
+the vacuum excess exceed that bound, where
+\[
+ \delta(g)=\min_{p\notin\mathcal P_*(g)}
+       p(f_g(p)-\min_q f_g(q))>0.
+\]
+At a tie $\mathcal P_*(g)$ contains both minimizers. For fixed rational
+$g$, a factorial-volume cutoff is computable. Every fixed positive
+$g$ also has eventual commensurability and separation. In particular
+\begin{equation}\label{eq:pitch}
+ p_*(g)=2r/g+O(1),\qquad \log_2h_*(g)=\log_2(1/g)+O(1).
+\end{equation}
+For $g\leq0$ the two wall-free vacua minimize, with classical margin
+at least $r$.
+
+The flags in \cite[Sections 5 and 11]{gap} tie the top, bottom, left
+and right of a tableau to its enclosing walls. In a correct cell the
+classical content is the unique functional tableau of an $h\times h$
+box. All extra tests are nonnegative unit penalties. All quantum terms
+below are positive, conditioned on local classical labels, and act
+either onsite or on a bond entirely inside a cell. Exterior quantum
+registers have one-dimensional frozen kernels and a specified positive
+excitation bound.
+
+\begin{lemma}[Reparametrization]\label{lem:unit}
+Suppose $\phi(g)$ samples every sufficiently large integer, only large
+integers as $g\downarrow0$, and $\ln\phi(g)=\ln(1/g)+O(1)$ uniformly.
+If $Q(h)>0$ and $|\ln Q(h)|=O(\ln h)$, the lower and upper power
+exponents of $Q(\phi(g))$ are those of $Q(h)$. If $Q(h)=O(\ln h)$,
+the same is true of the logarithmic coefficients.
+\end{lemma}
+\begin{proof}
+On a plateau with $\phi(g)=h$, the denominators differ by $O(1)$.
+The bounded normalized numerators make the difference of ratios $o(1)$.
+Every tail integer occurs, and small $g$ excludes any finite prefix.
+Consequently the two sets of tail limit points coincide. The argument
+does not require a computable convergence rate.
+\end{proof}
+
+\begin{proposition}[Selected-block transfer]\label{prop:transfer}
+Suppose a selection theorem gives minimizing perfect blocks of pitch
+$p$, with all other classical blocks at energy at least $E_0+\gamma$.
+Let the frozen excitation bound be $\gamma_f>0$, and include all
+tableau, flag, and exterior margins in
+$\gamma_{\rm eff}=\min(\gamma,\gamma_f,\gamma_{\rm other})$.
+In each minimizing block assume exactly
+\begin{equation}\label{eq:tensorsum}
+ H=E_0I+\sum_c(K_h-e(h)I)_c+\sum_w F_w,
+ \qquad e(h)=\min\spec K_h,
+\end{equation}
+on disjoint factors, with $\ker F_w=\C\ket{0}_w$.
+Below $E_0+\gamma_{\rm eff}$, the full spectrum is the sum spectrum
+of the cells, with multiplicities summed over the minimizing blocks.
+The full gap equals $\Delta^+(K_h)$ if that number is less than
+$\gamma_{\rm eff}$; otherwise the full gap is at least
+$\gamma_{\rm eff}$. Here $\Delta^+(K_h)=+\infty$ if the cell has
+no positive excitation above its ground space.
+The ground space is
+\begin{equation}\label{eq:groundspace}
+ \bigoplus_{\sigma\ {
+m minimizing}}\ket{\sigma}\otimes
+       \left(\bigotimes_c\ker(K_h-e(h)I)\right)\otimes\ket{\rm frozen}.
+\end{equation}
+Effective specified cell quantities with finite normalized endpoints
+transfer by Lemma~\ref{lem:unit}. Uniformly computable scalar cell data
+have lower, upper, and existing finite limits in
+$\LS,\LP,\Dtwo$, respectively.
+\end{proposition}
+\begin{proof}
+All classical labels are conserved. Nonminimizing blocks and excited
+frozen factors cannot contribute below the stated margin. Diagonalize
+the disjoint factors in \eqref{eq:tensorsum}; eigenvalues add and
+ground spaces tensor. This proves the spectral statement and
+\eqref{eq:groundspace}. If $d_h=\dim\ker(K_h-e(h)I)$, the degeneracy
+is $N_{\min}d_h^{L^2/p^2}$. The stripe phase count has
+$\log N_{\min}=O((L/p+1)\log p)$ at fixed pitch, so its entropy density
+vanishes; the quantum residual entropy density is $(\log d_h)/p^2$.
+
+Reparametrization proves the transfer assertion for the specified
+quantity. For arithmetic, uniformly approximate each normalized cell
+datum by a rational within $2^{-h}$. For a rational sequence $a_h$,
+\[
+ q<\liminf_h a_h\quad\Longleftrightarrow\quad
+ \exists r\in\Q\ \exists H\ [r>q\ \text{and}\ \forall h\geq H:\ a_h\geq r].
+\]
+This is a second-level existential left cut. The upper endpoint is
+dual; an existing finite limit is computable in the halting set.
+For an irrational endpoint complement the appropriate strict cut;
+a rational endpoint is itself computable. This is membership of an
+individual real in a cut class, not a uniform exact-comparison
+algorithm for arbitrary Cauchy names. It agrees with
+\cite[Proposition 10.1]{gap} and the prior calculus \cite{zheng}.
+\end{proof}
+
+If every cell ground state is unique, a single-block ground vector is
+a product over cells. More generally, that product is an available
+choice. For such states, restrictions to any region tensor over its
+cell intersections, so all R\'enyi entropies add over cut cells;
+whole-cell unions have zero entropy and different cells' observables
+factor. These conclusions are not statements about every vector in
+\eqref{eq:groundspace}. A free logical qubit in each cell permits a
+Bell state across two cells in a single classical block, giving a
+whole cell entropy one. Repeated finite Bell dimers even give a pure
+clustering example. Arbitrary cell marginals must therefore be used
+when cell kernels are degenerate.
+
+\begin{lemma}[Small-energy perfect-stripe staircase]\label{lem:shifted}
+Let $0\leq e(h)\leq ch^{-3}$ for $h\geq1$ and set
+\[
+ F_g(p)=-g/p+(r+e(p-1))/p^2,\qquad p\geq2.
+\]
+Define $d_p=((p+1)/p)e(p-1)-(p/(p+1))e(p)$ and $g'_p=g_p+d_p$.
+Then $F_g(p)-F_g(p+1)=(g'_p-g)/(p(p+1))$.
+The ties $g'_p$ strictly decrease for
+$p\geq p_0=\lceil4c/r\rceil+2$, and all sufficiently large pitches
+are selected in order among perfect stripes, with $p_*g\to2r$.
+\end{lemma}
+\begin{proof}
+Subtract the two densities. Nonnegativity gives
+$|d_p|\leq2c/(p-1)^3$, so
+\[
+ g'_p-g'_{p+1}\geq\frac{2r}{p(p+2)}-\frac{4c}{(p-1)^3}.
+\]
+For $p\geq p_0$ use $4c\leq r(p-2)$ and
+$2(p-1)^3-p(p+2)(p-2)=p^3-6p^2+10p-2>0$ for integers $p\geq2$.
+The last polynomial is positive at $2,3,4$ and increasing thereafter;
+the case $c=0$ is immediate. At sufficiently small $g$, the finitely
+many smaller pitches have positive density, whereas a pitch near
+$2r/g$ has negative density. Adjacent differences then change sign
+exactly once on the tail. Finally $g'_p=2r/p+O(p^{-2})$.
+\end{proof}
+
+This lemma compares perfect stripes. Selection against irregular
+configurations with positive cell energy requires the local charging
+hypothesis in Section~\ref{sec:conditional}. Zero cell energy needs
+only the imported ruler theorem.

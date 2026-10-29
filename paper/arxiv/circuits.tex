@@ -1,0 +1,194 @@
+\section{Strategy circuits, initialization rows, and padding}\label{sec:circuits}
+The halting-game finite model \eqref{eq:finite-import} is explicit but
+has long computation-history labels. A small system register does not
+imply a polynomial measurement circuit. The following resource bound
+is sufficient for the conditional composition.
+
+\begin{lemma}[Sequential orthogonality context]\label{lem:sequential}
+For projections $E,F$ on $\C^d$, Alice can answer the context forbidding
+the simultaneous $E=F=1$ outcome with the POVM
+\[
+ E,\qquad (I-E)F(I-E),\qquad (I-E)(I-F)(I-E).
+\]
+On a maximally entangled state, Bob using $E^{\mathsf T},F^{\mathsf T}$
+has zero $E$ disagreement and $F$ disagreement
+\begin{equation}\label{eq:sequential}
+ \frac{3\tr(EF)-2\tr(EFEF)}d\leq3\norm{EF}_f^2,
+ \qquad \norm A_f^2=d^{-1}\tr(A^*A).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The three positive effects sum to $I$. Measure $E$ first and, after
+a negative answer, measure $F$; the listed effects are exactly the
+resulting measurement. Let $M_F=(I-E)F(I-E)$. The maximally entangled
+trace identity with Bob's transpose gives disagreement
+$\tr(M_F+F-2M_FF)/d$. Expanding,
+$\tr M_F=\tr F-\tr EF$ and
+$\tr(M_FF)=\tr F-2\tr EF+\tr EFEF$, proving the identity.
+The last trace is nonnegative because it is the trace of $(FEF)^2$
+on $\operatorname{ran}F$. Also $\norm{EF}_f^2=\tr(EF)/d$.
+\end{proof}
+This coherent sequential POVM replaces the compiler's projection onto
+$(I-E)\operatorname{ran}F$. It changes only a constant in its loss
+bound, by at most a factor $3/2$. It is not an operator-norm
+approximation to that different projective measurement.
+
+\begin{proposition}[Halting-game circuit resources]\label{prop:circuits}
+For every fixed $\delta>0$ and even $N$, the finite models of
+\cite[Theorem 7.1]{unprice}, with the canonical compiler blocks of its
+Theorem 3.1 and Lemma~\ref{lem:sequential}, give near-winning
+measurement circuits on system dimension $c_0d_N$, of loss at most
+$\eps_N=C_1 16^{-N}$. Their size is at most
+$2^{(1+\delta)N}\operatorname{poly}(N)$ and their work space is
+$O(N^2)$ qubits. They have uniform classical descriptions generated
+within the same exponential scale, allowing an arbitrarily small
+fixed slack in $\delta$ for synthesis overhead. Finite-gate
+implementation error in the coherent measurement is at most
+$2^{-6N}$.
+\end{proposition}
+\begin{proof}
+We describe the algorithm against the explicit source model; we use,
+rather than re-prove, the compiler's algebraic soundness and finite
+model identities. Its coordinate registers are $N$-bit address, fuel
+and time, and $k_N=O(N)$ optional slots. The flag is
+\[
+ f_N(x)=\sum_{e\in K_N}\one_{\{x\equiv4^e\pmod{4^{e+1}}\}}.
+\]
+The residue classes are disjoint. Computing the flag, digits, masks,
+fuel reset predicates, and partial counts is polynomial in $N$ once
+$K_N$ is known. The count $h_N(x)=\sum_{r<x}f_N(r)$ is a sum of
+residue counts, using division with remainder for each $e$; no scan
+over $r<x$ is needed. Compute the maximum $N$-window count defining
+$k_N$ by a $2^N\operatorname{poly}(N)$ scan. Bounded simulation
+computes $K_N$ in that time using polynomial space. These are
+classical preprocessing steps.
+
+The diagonal geometric series for the source contractions $B,C$
+are truncated after $O(N)$ terms. Every translated slot is determined
+by the same residue counts and cyclic shifts. Address-clock dressing
+is the controlled slot rotation $D=\bigoplus_x R_0^{h_N(x)}$.
+Time increment, bit permutations and slot rotation have explicit
+involutive factorizations. For an increment coordinate, the maps
+$i\mapsto-i$ and $i\mapsto1-i$ multiply to increment; these maps are
+polynomial-time reversible arithmetic.
+
+The only less immediate permutation is the dressed $V$. In the $D^*$
+gauge it increments address $x$, applying a fixed slot permutation
+$P_0=R_0^{h_N(2^N)}$ only on wraparound. Given a slot string $z$,
+enumerate its orbit under $P_0$, of length $s\leq k_N$; choose the
+least representative $z_0$ and express $z=P_0^jz_0$. The coordinate
+$i=x+2^Nj$ is a cycle coordinate modulo $2^Ns$. Apply the two
+involutions above in this coordinate, convert back, and conjugate by
+$D$. Orbit search is over at most $k_N$ rotations, not over an
+exponential cycle. An efficiently computable involution is implemented
+by compute, swap, and uncompute.
+
+For a diagonal contraction $r$, the compiler uses
+\[
+ u(r)=2r-1+2i\sqrt{r(1-r)}.
+\]
+Realification is a single controlled rotation. Its two reflection
+factors are the fixed diagonal reflection and the rotation-plane
+reflection. Diagonal labels are computed reversibly, the appropriate
+rotation or phase applied, and the label uncomputed. Projections use
+a Boolean phase; source flips use controlled bit flips.
+
+The expensive labels have the form
+$\operatorname{Step}^{,t\bmod2^j}(\operatorname{Init}(x))$.
+There are fewer than $2^N$ steps. The fixed counter machine has
+constantly many counters, each at most $N/2+2^N$, hence configurations
+use $O(N)$ bits. Direct computation costs
+$2^N\operatorname{poly}(N)$ time and $O(N)$ space. Reversible
+pebbling \cite{bennett} implements compute, copy, and uncompute with
+time $2^{(1+\delta)N}\operatorname{poly}(N)$ and $O(N^2)$ work
+bits, for each fixed $\delta>0$.
+
+Precision must include square-root sensitivity at endpoints. The
+uniform inequality $|u(r)-u(s)|=O(\sqrt{|r-s|})$ on $[0,1]$ follows
+from the square-root inequality and the Lipschitz bound for $r(1-r)$.
+Use at least $16N+O(\log N)$ fractional bits for contraction values
+and discard a value $2^{-m}$ only beyond that precision. This yields
+source errors $O(2^{-8N})$ after square roots. For example discarding
+$r=2^{-(8N+1)}$ would instead cause error $2\sqrt r$, too large for
+$2^{-6N}$. Compute angles to a comparable linear precision. A
+polynomial number of register-controlled rotations is synthesized
+with polynomial precision overhead \cite{dawson}; allocating
+$O(N+\log N)$ synthesis bits to each rotation gives total error at
+most $2^{-6N}$. Arithmetic and reversible classical gates may be
+implemented exactly in a fixed universal algebraic gate set.
+
+The remaining compiler operations have presentation-dependent constant
+size: realification, selector Pauli registers, controlled source words,
+and doubled reflection blocks. In the source's first conjugacy block
+these have forms $\operatorname{diag}(X_i,I)$ and
+$\left(\begin{smallmatrix}0&X_i\\X_i&0\end{smallmatrix}\right)$;
+the second uses fixed-length products such as $ab$, $bab$, and $bc$.
+They require only controlled source reflections and a constant number
+of ancillary selector bits. Measure each commuting context with a
+constant number of controlled-reflection tests, and use
+Lemma~\ref{lem:sequential} for each orthogonality context. Forbidden
+answers caused by gate approximation are mapped to a fixed allowed
+assignment, changing the losing probability by at most the
+implementation error. Every context has an allowed assignment by the
+imported compiler. The exact source defects $O(4^{-N})$ give loss
+$O(16^{-N})$; adding $O(2^{-6N})$ leaves that scale unchanged.
+All preprocessing and gate-label generation are covered by the stated
+bound, with slack absorbing fixed polynomial factors.
+\end{proof}
+
+This is an algorithmic resource construction. It is not a supplied
+executable implementation of the complete compiler, and does not
+establish polynomial-size measurement circuits. No classical circuit
+lower bound is inferred from the long history labels.
+
+\subsection{Distributed initialization: a conditional algebraic estimate}
+To specify what a physical layout must preserve, consider two clocks
+and a row $R_j=\{t_A=j\}$. Let $u_{R_j}$ be uniform on that row and
+$u$ uniform on the grid. Spectral separation in the Bob coordinate gives
+\begin{equation}\label{eq:rowresistance}
+ (u_{R_j}-u)^*L_2^+(u_{R_j}-u)
+       =(L_{
+       \rm path}^+)_{jj}/n\leq1/3.
+\end{equation}
+For completeness the centered path diagonal is
+\[
+ (L_{\rm path}^+)_{jj}
+ =\frac1{n^2}\left[\sum_{i=1}^{j}i^2+\sum_{i=1}^{n-1-j}i^2\right],
+\]
+the squared edge-flow sum for injection at $j$ and uniform withdrawal.
+In particular the corner diagonal maximizes it and equals
+$(n-1)(2n-1)/(6n)<n/3$.
+
+Suppose a proposed layout supplies $q$ commuting rewound ancilla
+projections $P_j$, with a unit penalty on every vertex of their
+initialization row. Jensen's inequality and positivity give
+$\norm{(I-P_j)\operatorname{avg}_{R_j}\psi}\leq\sqrt{\lambda/n}$.
+Together with \eqref{eq:rowresistance},
+\[
+ \norm{(I-P_j)m}\leq(1/\sqrt n+1/\sqrt3)\sqrt\lambda.
+\]
+Since $I-\prod_jP_j\leq\sum_j(I-P_j)$, initialization error for all
+ancillas is at most $q(1/\sqrt n+1/\sqrt3)^2\lambda$. Include a
+commuting corner question projection and set
+\[
+ B=(1+\sqrt{G_2})^2+q(1/\sqrt n+1/\sqrt3)^2.
+\]
+The proof of \eqref{eq:extraction-proof} now gives the safe coefficient
+\begin{equation}\label{eq:rowconstant}
+ C'=2(1+2\sqrt B+2\sqrt{G_2})^2+1/2=O(q+G_2),
+\end{equation}
+and the normalized reference distance is at most
+$2(1/2+\sqrt B)\sqrt{M\lambda}$. These estimates are conditional
+on exactly the indicated rewound row penalties; they do not build them.
+
+\begin{lemma}[Padding]\label{lem:padding}
+Idle padding to $T\geq h^{3/2}$ makes the initialized variational
+energy at most $h^{-3}$ for two clocks. If also $T\leq h^C$ for a
+fixed $C$, then $G_2=O(\log h)$.
+\end{lemma}
+\begin{proof}
+The variational input has loss at most one and energy at most $1/M$,
+where $M=(T+1)^2>h^3$. The upper bound on $T$ and
+\eqref{eq:greenbound} give the resistance estimate. A lower bound
+on $T$ alone would not imply the latter conclusion.
+\end{proof}

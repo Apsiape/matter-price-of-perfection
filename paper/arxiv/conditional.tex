@@ -1,0 +1,149 @@
+\section{Conditional composition into a material}\label{sec:conditional}
+We isolate both assumptions needed to turn a referee cell into a
+translation-invariant material. Neither follows merely from small
+positive cell energy or from a general circuit-to-Hamiltonian citation.
+
+\begin{definition}[Local selection hypothesis]\label{def:selection}
+For every classical configuration, intact cells support disjoint
+$K_h$ and all remaining quantum terms are nonnegative. The area
+decomposition into wall segments has indicators $v_s$ for divider
+corners and $i_s\leq v_s$ for intact-cell corners, at pitch $p_s$.
+Clean matching runs have constant pitch and deficit greater than $-1$,
+with zero deficit for a closed run. Open and bad runs can be charged
+at most six times to each wall violation. Missing intact-cell corners
+can be charged at most six times to a wall violation and once to a
+tableau or flag violation. The rules specify these assignments locally.
+\end{definition}
+
+\begin{lemma}[Selection from the local hypothesis]\label{lem:positive-selection}
+Assume Definition~\ref{def:selection} and
+$0\leq e(h)\leq\min(1/64,ch^{-3})$. Perfect stripes are selected
+by Lemma~\ref{lem:shifted}; at fixed small off-tie $g$ every
+nonminimizing block has eventual separation at least $7/16$.
+\end{lemma}
+\begin{proof}
+Write $e_s=e(p_s-1)$, $e_{\max}=1/64$ and
+$f^*_e=\min_pF_g(p)<0$. The exact area bookkeeping and intact-cell
+lower bound give energy excess at least
+\begin{align*}
+ &\sum_s p_s(F_g(p_s)-f^*_e)
+ +\sum_s(r+e_s)(v_s-1/p_s)-\sum_s e_s(v_s-i_s)\\
+ &\hspace{20mm}+V_w+V_t+\operatorname{Area}_{W\text{-free}}(-f^*_e).
+\end{align*}
+The run hypothesis bounds the second term below by
+$-6(r+e_{\max})V_w$. The missing-corner hypothesis bounds the third
+by $-6e_{\max}V_w-e_{\max}V_t$. Thus the defect coefficients are
+at least $1-6r-12e_{\max}=7/16$ and
+$1-e_{\max}=63/64$. Clean wrong stripes have positive density
+separation; at sufficiently large commensurate factorial volume their
+energy excess exceeds $7/16$, as does the vacuum excess.
+\end{proof}
+This proves the implication from the local hypothesis. The hypothesis
+itself is an additional combinatorial rule-level requirement for
+positive-energy cells.
+
+\begin{definition}[Referee layout hypothesis]\label{def:layout}
+A fixed finite alphabet and rational algebraic onsite/bond rule set
+must implement, inside each selected $h\times h$ cell, the following.
+The depth is $N=2\lfloor(c/2)\log_2h\rfloor$, the strategies are those
+of Proposition~\ref{prop:circuits}, and the padded clocks have
+$h^{3/2}\leq T\leq h^C$. There is an exact invariant Cartesian legal
+propagation space with product rewinding and either the corner
+initialization in \eqref{eq:cell} or the commuting row penalties used
+in \eqref{eq:rowconstant}. The loss and question predicates have
+fixed-size interface support; initialization, transport and folds have
+specified nearest-neighbour rules. A local isometric support description
+gives $\log_2D_A=O(N^2+\log T)$ for low-energy cell vectors and
+their reference states. Unused sites are frozen. The generated
+classical gate labels fit the cell's time and space budget. All
+nonlegal sectors have the claimed quantitative separation and the
+factorized projection/product extension required for any asserted
+physical-state extraction. The effective extraction constant $C'_N$
+is polynomial in $N$ and the reference distance is
+$\operatorname{poly}(N)\sqrt{M\lambda}$.
+\end{definition}
+
+For an assertion about Gibbs states one must additionally have a genuine
+bipartite tensor-product state space and a proved bounded cut norm.
+An abstract globally conditioned legal subspace alone does not supply
+these thermal hypotheses.
+
+\begin{theorem}[Conditional halting-game cell coefficient]\label{thm:conditional}
+Assume Definitions~\ref{def:selection} and \ref{def:layout}, with
+$c=3/4$, the admitted dimension-matched halting-game strategies, and
+the specified competing/frozen margins. In every selected cell, every
+pure ground vector satisfies
+\begin{equation}\label{eq:conditional}
+ S_A=4\alpha_KN+o(N)
+    =3\alpha_K\log_2(1/g)+o(\log(1/g)).
+\end{equation}
+For any marginal $\rho_c$ supported on that cell ground space,
+\begin{equation}\label{eq:marginal}
+ \ED(\rho_c)=4\alpha_KN+o(N),\qquad
+ S((\rho_c)_A)=4\alpha_KN+o(N).
+\end{equation}
+The coefficient $3\alpha_K=3(3+\theta_K)/4$ is Turing-equivalent to
+$K$. This is a conditional cell theorem; no unconditional
+translation-invariant implementation is asserted.
+\end{theorem}
+\begin{proof}
+The initialized test strategy has target loss budget
+$\eps_N=C_1 16^{-N}$, so $Me(h)\leq\eps_N$ and
+Lemma~\ref{lem:padding} gives $e(h)\leq h^{-3}$.
+Freeze the finitely many cells below the fixed threshold needed for
+$e(h)\leq1/64$. Lemma~\ref{lem:positive-selection} and the assumed
+margins then give selected-block transfer.
+For every pure cell ground vector, extraction yields
+\[
+ S_A\geq d_{G_K}^{\to}(C'_N\eps_N)=4\alpha_KN+o(N),
+\]
+because $\log_2C'_N=O(\log N)$ and
+$\log_2(1/\eps_N)=4N+O(1)$. The actual optimal loss is only upper
+bounded by this target budget and is not identified with it.
+The normalized reference distance is
+$\operatorname{poly}(N)4^{-N}$ and the assumed support logarithm
+is polynomial. Proposition~\ref{prop:factorization}, or its row
+version, gives
+\[
+ S_A\leq\log_2(c_0d_N)+\log_2|X|+o(1)=4\alpha_KN+o(N).
+\]
+This proves the pure squeeze.
+
+For the mixed marginal, the loss operator inequality gives the same
+lower usable price. Uniformity of the projection estimate over the
+ground space bounds its weight outside the reference subspace by
+$\operatorname{poly}(N)16^{-N}$. Project and normalize the density
+matrix. The gentle projection bound gives trace distance
+$\operatorname{poly}(N)4^{-N}$; its reference Alice support has
+dimension at most $|X|c_0d_N$. Entropy continuity with the same actual
+support bound gives
+\[
+ 4\alpha_KN+o(N)\leq\ED(\rho_c)\leq S((\rho_c)_A)
+                         \leq4\alpha_KN+o(N).
+\]
+The middle inequality is the standard upper bound of distillation by
+local entropy. The last entropy need not itself be within-cell
+entanglement when $\rho_c$ is mixed. This argument does not imply
+entropy additivity for arbitrary unions of cells.
+
+Lemma~\ref{lem:shifted} gives
+$\log_2h=\log_2(1/g)+O(1)$; the even depth rounding changes $N$
+by at most two, so \eqref{eq:conditional} follows. An oracle for
+$K$ computes $\theta_K$ by finite sums and the geometric tail.
+Conversely subtract known contributions below $e$ and put
+$w_e=4^{-(e+1)}$. If $e\notin K$ the residual is at most $w_e/3$;
+if $e\in K$ it is at least $w_e$. Accuracy $w_e/6$ separates the
+two cases, inductively computing $K$. Rational affine rescaling
+preserves this Turing degree.
+\end{proof}
+
+The resource inequalities motivate the hypothesis but do not prove its
+rules. For $N=(3/4)\log_2h+O(1)$ and small fixed $\delta<1/3$,
+Proposition~\ref{prop:circuits} gives generation time $o(h)$ after
+absorbing its polynomial factor. Its $O(N^2)$ work qubits and padded
+length $h^{3/2}$ use $h^{3/2}\operatorname{poly}(\log h)=o(h^2)$
+time-space area. Exact legal propagation after folding, local endpoint
+access, distributed initialization, and label packing still require
+an actual rule table. The complete layout is a plausible open
+construction problem, stated once here. We do not extend this
+conditional result to every game with a limiting price coefficient.

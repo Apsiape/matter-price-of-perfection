@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Please cite the paper; this distribution supplies its source and finite checks."
+type: software
+title: "Matter that pays the price of perfection"
+version: 1.0.0
+date-released: 2026-10-29
+license:
+  - CC-BY-4.0
+  - MIT
+  - Apache-2.0
+authors:
+  - family-names: Douglas
+    given-names: Seth
+  - family-names: Mghirbi
+    given-names: Nidhal
+preferred-citation:
+  type: generic
+  title: "Matter that pays the price of perfection"
+  authors:
+    - family-names: Douglas
+      given-names: Seth
+    - family-names: Mghirbi
+      given-names: Nidhal
+  year: 2026
+  version: 1.0.0
+  notes: "Preprint. Text: CC BY 4.0. Scripts: MIT or Apache 2.0; see RIGHTS.md."
